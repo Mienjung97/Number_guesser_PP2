@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/style.css">
+    <!-- https://favicon.io/emoji-favicons/game-die -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-32x32.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
-
+    <!-- FontAwesome link taken from "Love Maths" -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Google Fonts: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <title>Number Guesser</title>
 
@@ -22,11 +29,29 @@
             alt="Big black die gets trown into the air"> Guess the right numbers!
     </h1>
 
-    <div class="game-area">
+    <div class="username">
+        <p>Create Username</p>
+    </div>
 
+    <div class="game-area">
+        <div class="select-game">
+            <!-- check 1 in 6 odds like a die (loop until fail)-->
+            <button class="btn dice"></button>
+            <!-- check increasing odds (1 in 2, 1 in 5, 1 in 10, 1 in 20, 1 in 50, 1 in 100 - restart)-->
+            <button class="btn increasing"></button>
+            <!-- 6 times 1 in 49, after one another or maybe all together -->
+            <button class="btn lottery"></button>
+        </div>
+        <div class="answer-area">
+            <p class="answer">The number you are supposed to guess is: <span class="hide" id="number">?</span></p> 
+            <br>
+            <input type="number" id="guess-number">
+        </div>
+        <button class="btn">Submit</button>
     </div>
 
     <!-- Area that shows: 1: current score of guessing (resets after fail); 2: amount of fails (does not reset) -->
+    <!-- For later point: introduce highscore that gets saved in browser cache -->
     <!-- General code inspired by "love maths" project -->
     <div class="score-area">
         <p class="scores">Your current streak: <span id="streak">0</span></p>
