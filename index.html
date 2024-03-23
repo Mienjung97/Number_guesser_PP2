@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-32x32.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
 
     <title>Number Guesser</title>
 
 </head>
+
 <body>
-    
+    <h1 class="heading">
+        <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
+        <img class="logo" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
+            alt="Big black die gets trown into the air"> Guess the right numbers!
+    </h1>
+
+    <div class="game-area">
+
+    </div>
+
+    <!-- Area that shows: 1: current score of guessing (resets after fail); 2: amount of fails (does not reset) -->
+    <!-- General code inspired by "love maths" project -->
+    <div class="score-area">
+        <p class="scores">Your current streak: <span id="streak">0</span></p>
+        <p class="scores">How often you failed: <span id="fails">0</span></p>
+    </div>
+
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
