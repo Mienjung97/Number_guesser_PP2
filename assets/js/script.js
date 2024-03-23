@@ -14,26 +14,43 @@ document.addEventListener("DOMContentLoaded", function () {
                 checkAnswer();
             } else {
                 // "this" is now assigning, which game is going to be played
-                let gaemType = this.getAttribute("data-type");
+                let gameType = this.getAttribute("data-type");
                 runGame();
             }
         })
     }
 
-    document.getElementById("guess-number").addEventListener("keydown", function(event) {
+    document.getElementById("guess-number").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
-            createRandomNumberLottery()
+            checkAnswer()
         }
     })
+
+    runGame("dice")
 })
 
 function runGame(gameType) {
 
+    // The following two lines are copied from Love Maths
+    // clear answer field after every submit
+    // document.getElementById("guess-number").value = "";
+    // Setting focus to submit box (after dubmitting new answer is ready to go)
+    // document.getElementById("guess-number").focus();
+
+    if (gameType === "dice") {
+        
+    } else {
+        alert("Doesnt work yet")
+    }
+
 };
 
-function createRandomNumberDie() {
-    let num1 = Math.ceil(Math.random() * 6 );
-    console.log(num1);
+function RandomNumberDie() {
+    let realNumber = Math.ceil(Math.random() * 6);
+    console.log(realNumber);
+    let userGuess = parseInt(document.getElementById("guess-number").value);
+    console.log(userGuess);
+    return realNumber, userGuess
 };
 
 //function createRandomNumberDecreasingOdds() {
@@ -41,12 +58,25 @@ function createRandomNumberDie() {
 //};
 
 function createRandomNumberLottery() {
-    let num1 = Math.ceil(Math.random() * 49 );
+    let num1 = Math.ceil(Math.random() * 49);
     console.log(num1);
+
 };
 
 function checkAnswer() {
-    alert("Submit and key listener works!")
+    let realNumber = Math.ceil(Math.random() * 6);
+    console.log(realNumber)
+    let userGuess = parseInt(document.getElementById("guess-number").value);
+    console.log(userGuess)
+    let correct = userGuess === realNumber;
+
+    if (correct) {
+        alert("amazing")
+    } else {
+        alert("wrong")
+    }
+    document.getElementById("guess-number").value = "";
+
 };
 
 function winningStreak() {
