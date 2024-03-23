@@ -26,11 +26,12 @@
         <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
         <img class="logo" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
             alt="Big black die gets trown into the air">
-        <h1>Guess the right numbers!</h1>
+        <h1 id="head">Guess the right numbers!</h1>
     </h1>
 
     <div class="username-input">
         <label for="username" name="username">Create Username:</label>
+        <br>
         <input type="text" name="username" id="username" placeholder="Your Username">
     </div>
 
@@ -39,7 +40,7 @@
             <!-- check 1 in 6 odds like a die (loop until fail)-->
             <button class="btn dice" id="game1">Dice guessing</button>
             <!-- check increasing odds (1 in 2, 1 in 5, 1 in 10, 1 in 20, 1 in 50, 1 in 100 - restart)-->
-            <button class="btn increasing" id="game2">Increasing numbers</button>
+            <button class="btn increasing" id="game2">Decreasing odds</button>
             <!-- 6 times 1 in 49, after one another or maybe all together -->
             <button class="btn lottery" id="game3">Lottery</button>
         </div>
@@ -61,6 +62,7 @@
     <!-- General code inspired by "love maths" project -->
     <div class="score-area">
         <p class="scores">Your current streak: <span id="streak">0</span></p>
+        <p class="scores">Your heighest streak: <span id="biggest-streak">0</span></p>
         <p class="scores">How often you failed: <span id="fails">0</span></p>
     </div>
 

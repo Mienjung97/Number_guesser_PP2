@@ -10,8 +10,12 @@ body {
 
 /* Heading */
 
+#head {
+    margin: 5px;
+}
+
 .logo {
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 /* Username input */
@@ -111,7 +115,7 @@ body {
 /* Media query for height adjustment */
 @media (max-height: 900px) {
     .logo {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 }
 
