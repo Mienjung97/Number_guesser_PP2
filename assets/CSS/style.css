@@ -100,3 +100,23 @@ body {
         padding: 5%;
     }
 }
+
+/* Media query for big screens */
+@media (min-width: 1500px) {
+    body {
+        font-size: 130%;
+    }
+}
+
+/* Media query for height adjustment */
+@media (max-height: 900px) {
+    .logo {
+        padding-top: 1rem;
+    }
+}
+
+@media (max-height: 700px) {
+    .logo {
+        width: 60%;
+    }
+}
