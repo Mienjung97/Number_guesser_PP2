@@ -38,11 +38,17 @@
     <div class="game-area">
         <div class="select-game">
             <!-- check 1 in 6 odds like a die (loop until fail)-->
-            <button class="btn dice" id="game1">Dice guessing</button>
+            <button data-type="dice" class="btn dice" id="game1">
+                Dice guessing
+            </button>
             <!-- check increasing odds (1 in 2, 1 in 5, 1 in 10, 1 in 20, 1 in 50, 1 in 100 - restart)-->
-            <button class="btn increasing" id="game2">Decreasing odds</button>
+            <button data-type="decreasing" class="btn decreasing" id="game2">
+                Decreasing odds
+            </button>
             <!-- 6 times 1 in 49, after one another or maybe all together -->
-            <button class="btn lottery" id="game3">Lottery</button>
+            <button data-type="lottery" class="btn lottery" id="game3">
+                Lottery
+            </button>
         </div>
         <div class="game-type">
             <h3>The game you are playing is: <span id="game">?</span></h3>
@@ -51,7 +57,7 @@
         <div class="answer-area"> 
             <input type="number" id="guess-number" placeholder="Your guess">
         </div>
-        <button class="btn-submit">Submit your guess</button>
+        <button data-type="submit" class="btn-submit">Submit your guess</button>
         <div class="answer">
             <p class="hide">The number you are supposed to guess is: <span id="number">?</span></p>
         </div>
