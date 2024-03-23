@@ -9,9 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Iterate over the different game type buttons
     for (let button of buttons) {
         button.addEventListener("click", function () {
+            // "this" checks which button was clicked and saves it as "this" in current function
             if (this.getAttribute("data-type") === "submit") {
                 checkAnswer();
             } else {
+                // "this" is now assigning, which game is going to be played
                 let gaemType = this.getAttribute("data-type");
                 runGame();
             }
@@ -20,17 +22,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("guess-number").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            checkAnswer()
+            createRandomNumberLottery()
         }
     })
 })
 
-function runGame() {
+function runGame(gameType) {
 
 };
 
-function createRandomNumber() {
+function createRandomNumberDie() {
+    let num1 = Math.ceil(Math.random() * 6 );
+    console.log(num1);
+};
 
+//function createRandomNumberDecreasingOdds() {
+//    
+//};
+
+function createRandomNumberLottery() {
+    let num1 = Math.ceil(Math.random() * 49 );
+    console.log(num1);
 };
 
 function checkAnswer() {
