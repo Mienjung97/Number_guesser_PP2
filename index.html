@@ -29,24 +29,26 @@
         <h1>Guess the right numbers!</h1>
     </h1>
 
-    <div class="username">
-        <p>Create Username</p>
+    <div class="username-input">
+        <label for="username" name="username">Create Username:</label>
+        <input type="text" name="username" id="username" placeholder="Your Username">
     </div>
 
     <div class="game-area">
         <div class="select-game">
             <!-- check 1 in 6 odds like a die (loop until fail)-->
-            <button class="btn dice">Dice guessing</button>
+            <button class="btn dice" id="game1">Dice guessing</button>
             <!-- check increasing odds (1 in 2, 1 in 5, 1 in 10, 1 in 20, 1 in 50, 1 in 100 - restart)-->
-            <button class="btn increasing">Increasing numbers</button>
+            <button class="btn increasing" id="game2">Increasing numbers</button>
             <!-- 6 times 1 in 49, after one another or maybe all together -->
-            <button class="btn lottery">Lottery</button>
+            <button class="btn lottery" id="game3">Lottery</button>
         </div>
         <div class="game-type">
-            <p>The game you are playing is:</p>
+            <h3>The game you are playing is: <span id="game">?</span></h3>
+            <p>Game explanation: <br> <span id="explanation">Explanation</span></p>
         </div>
         <div class="answer-area"> 
-            <input type="number" id="guess-number" placeholder="Enter your guess">
+            <input type="number" id="guess-number" placeholder="Your guess">
         </div>
         <button class="btn-submit">Submit your guess</button>
         <div class="answer">
