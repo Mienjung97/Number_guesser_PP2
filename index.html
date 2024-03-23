@@ -9,7 +9,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-32x32.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
     <!-- FontAwesome link taken from "Love Maths" -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -26,7 +25,8 @@
     <h1 class="heading">
         <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
         <img class="logo" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
-            alt="Big black die gets trown into the air"> Guess the right numbers!
+            alt="Big black die gets trown into the air">
+        <h1>Guess the right numbers!</h1>
     </h1>
 
     <div class="username">
@@ -36,18 +36,22 @@
     <div class="game-area">
         <div class="select-game">
             <!-- check 1 in 6 odds like a die (loop until fail)-->
-            <button class="btn dice"></button>
+            <button class="btn dice">Dice guessing</button>
             <!-- check increasing odds (1 in 2, 1 in 5, 1 in 10, 1 in 20, 1 in 50, 1 in 100 - restart)-->
-            <button class="btn increasing"></button>
+            <button class="btn increasing">Increasing numbers</button>
             <!-- 6 times 1 in 49, after one another or maybe all together -->
-            <button class="btn lottery"></button>
+            <button class="btn lottery">Lottery</button>
         </div>
-        <div class="answer-area">
-            <p class="answer">The number you are supposed to guess is: <span class="hide" id="number">?</span></p> 
-            <br>
-            <input type="number" id="guess-number">
+        <div class="game-type">
+            <p>The game you are playing is:</p>
         </div>
-        <button class="btn">Submit</button>
+        <div class="answer-area"> 
+            <input type="number" id="guess-number" placeholder="Enter your guess">
+        </div>
+        <button class="btn-submit">Submit your guess</button>
+        <div class="answer">
+            <p class="hide">The number you are supposed to guess is: <span id="number">?</span></p>
+        </div>
     </div>
 
     <!-- Area that shows: 1: current score of guessing (resets after fail); 2: amount of fails (does not reset) -->
