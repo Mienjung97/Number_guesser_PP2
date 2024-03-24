@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 // "this" is now assigning, which game is going to be played
                 let gameType = this.getAttribute("data-type");
-                runGame();
+                runGame(gameType);
             }
-        })
+        });
     }
 
     document.getElementById("guess-number").addEventListener("keydown", function (event) {
@@ -26,25 +26,69 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 
-    runGame("dice")
+    runGame("coin")
 })
 
 function runGame(gameType) {
 
-    // The following two lines are copied from Love Maths
-    // clear answer field after every submit
-    // document.getElementById("guess-number").value = "";
-    // Setting focus to submit box (after dubmitting new answer is ready to go)
-    // document.getElementById("guess-number").focus();
+    let num1 = Math.ceil(Math.random() * 2);
+    let num2 = Math.ceil(Math.random() * 6);
+    let num3 = Math.ceil(Math.random() * 49);
 
-    if (gameType === "dice") {
-        
+
+    if (gameType === "coin") {
+        console.log(num1);
+        let userGuess = parseInt(document.getElementById("guess-number").value);
+        console.log(userGuess)
+        coinFlipCheck(num1, userGuess);
     } else {
         alert("Doesnt work yet")
     }
 
 };
 
+function coinFlipCheck(realNumber, userGuess) {
+    document.getElementById('number').textContent = realNumber;
+    console.log(realNumber);
+    console.log(userGuess);
+    return realNumber, userGuess
+};
+
+function checkAnswer() {
+    let real = parseInt(document.getElementById("number").value);
+    console.log(real);
+    let user = parseInt(document.getElementById("guess-number").value);
+    console.log(user);
+   // document.getElementById('number').textContent = realNumber;
+   // console.log(realNumber)
+
+    let correct = userGuess === realNumber;
+
+    if (correct) {
+        alert("amazing")
+    } else {
+        alert("wrong")
+    }
+    document.getElementById("guess-number").value = "";
+
+};
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+function winningStreak() {
+
+};
+
+function incrementWrongAnswer() {
+
+};
+
+function highestStreak() {
+
+};
+
+// not yet functinal
 function RandomNumberDie() {
     let realNumber = Math.ceil(Math.random() * 6);
     console.log(realNumber);
@@ -60,33 +104,5 @@ function RandomNumberDie() {
 function createRandomNumberLottery() {
     let num1 = Math.ceil(Math.random() * 49);
     console.log(num1);
-
-};
-
-function checkAnswer() {
-    let realNumber = Math.ceil(Math.random() * 6);
-    console.log(realNumber)
-    let userGuess = parseInt(document.getElementById("guess-number").value);
-    console.log(userGuess)
-    let correct = userGuess === realNumber;
-
-    if (correct) {
-        alert("amazing")
-    } else {
-        alert("wrong")
-    }
-    document.getElementById("guess-number").value = "";
-
-};
-
-function winningStreak() {
-
-};
-
-function incrementWrongAnswer() {
-
-};
-
-function highestStreak() {
 
 };
