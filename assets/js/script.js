@@ -51,6 +51,8 @@ function runGame() {
                 incrementWrongAnswer()
             }
         }
+        // clear the input field 
+        document.getElementById("guess-number").value = "";
     };
 };
 
