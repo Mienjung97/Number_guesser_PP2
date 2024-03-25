@@ -64,7 +64,15 @@ function winningStreak() {
 };
 
 function incrementWrongAnswer() {
+    // get old fail amount from webpage
+    let oldFails = parseInt(document.getElementById("fails").innerText)
+    // increases fail amount
+    document.getElementById("fails").innerText = ++oldFails
 
+    // resets the winning streak back to 0
+    let streak = parseInt(document.getElementById("streak").innerText);
+    streak = 0;
+    document.getElementById("streak").innerText = streak;
 };
 
 function highestStreak() {
