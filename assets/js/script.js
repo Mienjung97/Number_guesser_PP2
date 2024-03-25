@@ -31,6 +31,25 @@ function runGame() {
             winningStreak();
             highestStreak();
             runGame();
+        } else {
+            // alert for when no number is entered
+            if (isNaN(userGuess)) {
+                alert("Please enter a valid number");
+            // two messages for too low
+            } else if (userGuess < (num1 - 1)) {
+                alert("You are far too low.")
+                incrementWrongAnswer()
+            } else if (userGuess < num1) {
+                alert("You are too low, but close.")
+                incrementWrongAnswer()
+            // two messages for too high
+            } else if (userGuess > (num1 + 1)) {
+                alert("You are far too high.")
+                incrementWrongAnswer()
+            } else {
+                alert("You are too high, but close.")
+                incrementWrongAnswer()
+            }
         }
     };
 };
