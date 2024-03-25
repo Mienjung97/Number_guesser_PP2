@@ -3,3 +3,20 @@
 document.addEventListener("DOMContentLoaded", function () {
     runGame()
 });
+
+
+function runGame() {
+
+};
+
+function winningStreak() {
+
+};
+
+function incrementWrongAnswer() {
+
+};
+
+function highestStreak() {
+
+};
