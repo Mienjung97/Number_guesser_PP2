@@ -121,8 +121,8 @@ function runGameCoin() {
     };
 };
 
+// clear the input field 
 function clear() {
-    // clear the input field 
     document.getElementById("guess-number").value = "";
 }
 
