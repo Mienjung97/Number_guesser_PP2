@@ -35,33 +35,43 @@
         <input type="text" name="username" id="username" placeholder="Your Username">
     </div>
 
+    <!-- Game Area -->
     <div class="game-area">
+        <!-- Buttons for choosing game -->
         <div>
+            <!-- Coin flip game -->
             <button data-type="coin" class="btn">
-                <p>Coin flip</p>
+                <i class="fa-solid fa-circle-half-stroke"></i>
             </button>
+            <!-- Dice roll game -->
             <button data-type="die" class="btn">
-                <p>Roll a die</p>
+                <i class="fa-solid fa-dice"></i>
             </button>
         </div>
+        
+        <!-- Game information display (changing with gametype - not yet implemented) -->
         <div class="game-info">
-            <p>Game explanation: <br> <span id="explanation">Find the number between 1 and 6</span></p>
+            <p>Game explanation: <br> <span id="explanation">Find the number between 1 and 2</span></p>
         </div>
+        <!-- Area to input number guess -->
         <div class="answer-area"> 
             <input type="number" id="guess-number" placeholder="Your guess">
         </div>
+        <!-- Submit button (Enter works as "click on submit") -->
         <button data-type="submit" id="submit" class="btn-submit">Submit your guess</button>
         <div class="answer">
             <p class="hide">The number you are supposed to guess is: <span id="number">0</span></p>
         </div>
     </div>
 
-    <!-- Area that shows: 1: current score of guessing (resets after fail); 2: amount of fails (does not reset) -->
     <!-- For later point: introduce highscore that gets saved in browser cache -->
-    <!-- General code inspired by "love maths" project -->
+    <!-- General code for scores was inspired by "love maths" project -->
     <div class="score-area">
+        <!-- Current streak of correct guesses, resets after fail -->
         <p class="scores">Your current streak: <span id="streak">0</span></p>
+        <!-- Shows the greatest high score, does not reset -->
         <p class="scores">Your heighest streak: <span id="biggest-streak">0</span></p>
+        <!-- Shows the amount of fails -->
         <p class="scores">How often you failed: <span id="fails">0</span></p>
     </div>
 
