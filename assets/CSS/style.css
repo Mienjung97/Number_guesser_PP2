@@ -90,9 +90,9 @@ body {
     color: rgb(253, 165, 0);
 }
 
-/*.hide {
-    /*display: none;*/
-/*}
+.hide {
+   /* display: none;*/
+}
 
 /* Meadia query for small screens */
 @media (max-width: 400px) {

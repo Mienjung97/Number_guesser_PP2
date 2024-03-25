@@ -1,7 +1,23 @@
 // Wait for DOM to finish leading before starting the game
 
 document.addEventListener("DOMContentLoaded", function () {
-    runGame()
+
+    // Buttons for game types
+    let buttons = this.getElementsByTagName("button");
+
+    for (button of buttons) {
+        button.addEventListener("click", function() {
+            // Start Coin game (1 in 2 odds)
+            if (this.getAttribute("data-type") === "coin") {
+                runGameCoin()
+            // Start die game (1 in 6 odds)
+            } else if (this.getAttribute("data-type") === "die") {
+                runGameDie()
+            }
+        })
+    }
+
+    runGameCoin()
 });
 
 // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
@@ -13,7 +29,8 @@ document.getElementById("guess-number").addEventListener("keydown", function(eve
     }
 )
 
-function runGame() {
+// Game one: guessing the right number on a die
+function runGameDie() {
 
     // create random number between 1 and 6
     let num1 = Math.ceil(Math.random() * 6);
@@ -38,7 +55,7 @@ function runGame() {
             alert("Amazing, you got it! Now Try again.");
             winningStreak();
             highestStreak();
-            runGame();
+            runGameDie();
         } else {
             // alert for when no number is entered
             if (isNaN(userGuess)) {
@@ -59,10 +76,14 @@ function runGame() {
                 incrementWrongAnswer()
             }
         }
-        // clear the input field 
-        document.getElementById("guess-number").value = "";
+        clear();
     };
 };
+
+function clear() {
+    // clear the input field 
+    document.getElementById("guess-number").value = "";
+}
 
 function winningStreak() {
     // gets old wins from webpage
