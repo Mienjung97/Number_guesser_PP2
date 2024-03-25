@@ -36,28 +36,13 @@
     </div>
 
     <div class="game-area">
-        <div class="select-game">
-            <!-- check 1 in 2 odds like a die (loop until fail) -->
-            <button data-type="coin" class="btn coin">
-                Coin Flip
-            </button>
-            <!-- check 1 in 6 odds like a die (loop until fail) -->
-            <button data-type="dice" class="btn dice">
-                Dice guessing
-            </button>
-            <!-- 6 times 1 in 49, after one another -->
-            <button data-type="lottery" class="btn lottery">
-                Lottery
-            </button>
-        </div>
         <div class="game-info">
-            <h3>The game you are playing is: <span id="game">?</span></h3>
-            <p>Game explanation: <br> <span id="explanation">Explanation</span></p>
+            <p>Game explanation: <br> <span id="explanation">Find the number between 1 and 6</span></p>
         </div>
         <div class="answer-area"> 
             <input type="number" id="guess-number" placeholder="Your guess">
         </div>
-        <button data-type="submit" class="btn-submit">Submit your guess</button>
+        <button data-type="submit" id="submit" class="btn-submit">Submit your guess</button>
         <div class="answer">
             <p class="hide">The number you are supposed to guess is: <span id="number">0</span></p>
         </div>
