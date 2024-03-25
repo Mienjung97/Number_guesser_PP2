@@ -15,6 +15,24 @@ function runGame() {
     // make number show on page for further testing
     document.getElementById('number').textContent = num1;
 
+    // make submit button work
+    document.getElementById("submit").onclick = function () {
+
+        // get guess from user from input box
+        let userGuess = parseInt(document.getElementById('guess-number').value);
+        console.log(userGuess)
+
+        // basic statement for checking the number
+        let correct = userGuess === num1;
+
+        // correct statemant
+        if (correct) {
+            alert("Amazing, you got it! Now Try again.");
+            winningStreak();
+            highestStreak();
+            runGame();
+        }
+    };
 };
 
 function winningStreak() {
