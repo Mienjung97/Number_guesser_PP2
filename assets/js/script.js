@@ -80,6 +80,47 @@ function runGameDie() {
     };
 };
 
+// Game two: guessing the probability of a coinflip 
+function runGameCoin() {
+
+    // create random number between 1 and 2 to simulate a coin flip
+    let num1 = Math.ceil(Math.random() * 2);
+    // console.log for functionality test
+    console.log(num1);
+
+    // make number show on page for further testing
+    document.getElementById('number').textContent = num1;
+
+    // make submit button work
+    document.getElementById("submit").onclick = function () {
+
+        // get guess from user from input box
+        let userGuess = parseInt(document.getElementById('guess-number').value);
+        console.log(userGuess)
+
+        // basic statement for checking the number
+        let correct = userGuess === num1;
+
+        // correct statemant
+        if (correct) {
+            alert("Amazing, you got it! Now Try again.");
+            winningStreak();
+            highestStreak();
+            runGameCoin();
+        } else {
+            // alert for when no number is entered
+            if (isNaN(userGuess)) {
+                alert("Please enter a valid number");
+            // messages for wrong answer
+            } else {
+                alert("You are wrong")
+                incrementWrongAnswer()
+            }
+        }
+        clear()
+    };
+};
+
 function clear() {
     // clear the input field 
     document.getElementById("guess-number").value = "";
