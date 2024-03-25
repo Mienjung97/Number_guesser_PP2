@@ -84,5 +84,10 @@ function incrementWrongAnswer() {
 };
 
 function highestStreak() {
-
+    // get old highscore from webpage
+    let oldStreak = parseInt(document.getElementById("biggest-streak").innerText)
+    let currentWins = parseInt(document.getElementById("streak").innerText)
+    if (oldStreak < currentWins) {
+        document.getElementById("biggest-streak").innerText = currentWins
+    }
 };
