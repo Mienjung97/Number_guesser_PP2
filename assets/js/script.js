@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
     runGame()
 });
 
+// https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+// make the Enter key behave like the submit button
+document.getElementById("guess-number").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("submit").click();
+      }
+    }
+)
 
 function runGame() {
 
