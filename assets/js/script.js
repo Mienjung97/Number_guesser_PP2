@@ -57,7 +57,10 @@ function runGame() {
 };
 
 function winningStreak() {
-
+    // gets old wins from webpage
+    let oldWins = parseInt(document.getElementById("streak").innerText)
+    // increments winning streak by one
+    document.getElementById("streak").innerText = ++oldWins
 };
 
 function incrementWrongAnswer() {
