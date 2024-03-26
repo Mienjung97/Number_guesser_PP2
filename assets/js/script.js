@@ -1,16 +1,18 @@
-// Wait for DOM to finish leading before starting the game
-
+/**
+ * Eventlistener to load the DOM and change the game type
+ * start with coin flip game
+ */
 document.addEventListener("DOMContentLoaded", function () {
 
     // Buttons for game types
     let buttons = this.getElementsByTagName("button");
 
     for (button of buttons) {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             // Start Coin game (1 in 2 odds)
             if (this.getAttribute("data-type") === "coin") {
                 runGameCoin()
-            // Start die game (1 in 6 odds)
+                // Start die game (1 in 6 odds)
             } else if (this.getAttribute("data-type") === "die") {
                 runGameDie()
             }
@@ -21,15 +23,68 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
-// make the Enter key behave like the submit button
-document.getElementById("guess-number").addEventListener("keydown", function(event) {
+/**
+ * make the Enter key behave like the submit button
+ */
+document.getElementById("guess-number").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         document.getElementById("submit").click();
-      }
     }
-)
+})
 
-// Game one: guessing the right number on a die
+/**
+ * Game one: guessing the right number with the odds of a coin flip (1 in 2)
+ * functions for winning and loosing points are called
+ * alerts for winning or loosing are in place
+ */
+function runGameCoin() {
+
+    changeExplanation("1");
+    scoreboard();
+
+    // create random number between 1 and 2 to simulate a coin flip
+    let num1 = Math.ceil(Math.random() * 2);
+    // console.log for functionality test
+    console.log(num1);
+
+    // make number show on page for further testing
+    document.getElementById('number').textContent = num1;
+
+    // make submit button work
+    document.getElementById("submit").onclick = function () {
+
+        // get guess from user from input box
+        let userGuess = parseInt(document.getElementById('guess-number').value);
+        console.log(userGuess)
+
+        // basic statement for checking the number
+        let correct = userGuess === num1;
+
+        // correct statemant
+        if (correct) {
+            alert("Amazing, you got it! Now Try again.");
+            winningStreak();
+            highestStreak();
+            runGameCoin();
+        } else {
+            // alert for when no number is entered
+            if (isNaN(userGuess)) {
+                alert("Please enter a valid number");
+                // messages for wrong answer
+            } else {
+                alert("You are wrong")
+                incrementWrongAnswer()
+            }
+        }
+        clear()
+    };
+};
+
+/**
+ * Game two: guessing the right number with the odds of rolling a die (1 in 6)
+ * functions for winning and loosing points are called
+ * alerts for winning and 4 indicators of how far off the guess is
+ */
 function runGameDie() {
 
     changeExplanation();
@@ -63,14 +118,14 @@ function runGameDie() {
             // alert for when no number is entered
             if (isNaN(userGuess)) {
                 alert("Please enter a valid number");
-            // two messages for too low
+                // two messages for too low
             } else if (userGuess < (num1 - 1)) {
                 alert("You are far too low.")
                 incrementWrongAnswer()
             } else if (userGuess < num1) {
                 alert("You are too low, but close.")
                 incrementWrongAnswer()
-            // two messages for too high
+                // two messages for too high
             } else if (userGuess > (num1 + 1)) {
                 alert("You are far too high.")
                 incrementWrongAnswer()
@@ -83,49 +138,10 @@ function runGameDie() {
     };
 };
 
-// Game two: guessing the probability of a coinflip 
-function runGameCoin() {
-
-    changeExplanation("1");
-
-    // create random number between 1 and 2 to simulate a coin flip
-    let num1 = Math.ceil(Math.random() * 2);
-    // console.log for functionality test
-    console.log(num1);
-
-    // make number show on page for further testing
-    document.getElementById('number').textContent = num1;
-
-    // make submit button work
-    document.getElementById("submit").onclick = function () {
-
-        // get guess from user from input box
-        let userGuess = parseInt(document.getElementById('guess-number').value);
-        console.log(userGuess)
-
-        // basic statement for checking the number
-        let correct = userGuess === num1;
-
-        // correct statemant
-        if (correct) {
-            alert("Amazing, you got it! Now Try again.");
-            winningStreak();
-            highestStreak();
-            runGameCoin();
-        } else {
-            // alert for when no number is entered
-            if (isNaN(userGuess)) {
-                alert("Please enter a valid number");
-            // messages for wrong answer
-            } else {
-                alert("You are wrong")
-                incrementWrongAnswer()
-            }
-        }
-        clear()
-    };
-};
-
+/**
+ * Function to change outer apperance of game (explanation and logo)
+ * depending on which game is selected
+ */
 function changeExplanation(num) {
     let explanation = document.getElementById("explanation").innerText;
     if (num === "1") {
@@ -151,23 +167,16 @@ function changeExplanation(num) {
     }
 }
 
-
-
-
-function myFunction() {
-    var element = document.getElementById("myDIV");
-    element.classList.toggle("mystyle");
-  }
-
-
-
-
-
-// clear the input field 
+/**
+ * clear the input field 
+ */
 function clear() {
     document.getElementById("guess-number").value = "";
 }
 
+/**
+ * increments the current winning streak
+ */
 function winningStreak() {
     // gets old wins from webpage
     let oldWins = parseInt(document.getElementById("streak").innerText)
@@ -175,6 +184,10 @@ function winningStreak() {
     document.getElementById("streak").innerText = ++oldWins
 };
 
+/**
+ * increments the amount of wrong guesses
+ * reduces "current streak" back to 0
+ */
 function incrementWrongAnswer() {
     // get old fail amount from webpage
     let oldFails = parseInt(document.getElementById("fails").innerText)
@@ -187,6 +200,9 @@ function incrementWrongAnswer() {
     document.getElementById("streak").innerText = streak;
 };
 
+/**
+ * Shows the highest streak achieved by the user, does not reset
+ */
 function highestStreak() {
     // get old highscore from webpage
     let oldStreak = parseInt(document.getElementById("biggest-streak").innerText)
@@ -196,7 +212,9 @@ function highestStreak() {
     }
 };
 
-// Scoreboard
+/**
+ * Scoreboard
+ */
 function scoreboard() {
     let username = document.getElementById("username").value;
     document.getElementById("name").innerText = username;
