@@ -125,6 +125,16 @@ tr:hover {
     }
 }
 
+/* Meadia query for small screens */
+@media (max-width: 480px) {
+    .gamechoice {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+}
+
 /* Media query for big screens */
 @media (min-width: 1500px) {
     body {
