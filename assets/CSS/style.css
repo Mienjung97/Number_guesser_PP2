@@ -34,6 +34,12 @@ body {
     margin-right: auto;
 }
 
+.gamechoice {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
 /* Set score area style */
 .score-area {
     display: flex;
