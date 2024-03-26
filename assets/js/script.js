@@ -32,6 +32,8 @@ document.getElementById("guess-number").addEventListener("keydown", function(eve
 // Game one: guessing the right number on a die
 function runGameDie() {
 
+    changeExplanation();
+
     // create random number between 1 and 6
     let num1 = Math.ceil(Math.random() * 6);
     // console.log for functionality test
@@ -83,6 +85,8 @@ function runGameDie() {
 // Game two: guessing the probability of a coinflip 
 function runGameCoin() {
 
+    changeExplanation("1");
+
     // create random number between 1 and 2 to simulate a coin flip
     let num1 = Math.ceil(Math.random() * 2);
     // console.log for functionality test
@@ -120,6 +124,17 @@ function runGameCoin() {
         clear()
     };
 };
+
+function changeExplanation(num) {
+    let explanation = document.getElementById("explanation").innerText;
+    if (num === "1") {
+        explanation = "1 and 2, like a coin toss";
+        document.getElementById("explanation").innerText = explanation;
+    } else {
+        explanation = "1 and 6, like a die roll"
+        document.getElementById("explanation").innerText = explanation;
+    }
+}
 
 // clear the input field 
 function clear() {

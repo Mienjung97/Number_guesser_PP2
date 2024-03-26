@@ -22,10 +22,10 @@
 
 <body>
     <h1 class="heading">
+        <h1 id="head">Guess the right numbers!</h1>
         <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
         <img class="logo" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
             alt="Big black die gets trown into the air">
-        <h1 id="head">Guess the right numbers!</h1>
     </h1>
 
     <div class="username-input">
@@ -50,7 +50,7 @@
 
         <!-- Game information display (changing with gametype - not yet implemented) -->
         <div class="game-info">
-            <p>Game explanation: <br> <span id="explanation">Find the number between 1 and 2</span></p>
+            <p>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></p>
         </div>
         <!-- Area to input number guess -->
         <div class="answer-area"> 
@@ -67,11 +67,11 @@
     <!-- General code for scores was inspired by "love maths" project -->
     <div class="score-area">
         <!-- Current streak of correct guesses, resets after fail -->
-        <p class="scores">Your current streak: <span id="streak">0</span></p>
+        <p class="scores">Current streak: <span id="streak">0</span></p>
         <!-- Shows the greatest high score, does not reset -->
-        <p class="scores">Your heighest streak: <span id="biggest-streak">0</span></p>
+        <p class="scores">Heighest streak: <span id="biggest-streak">0</span></p>
         <!-- Shows the amount of fails -->
-        <p class="scores">How often you failed: <span id="fails">0</span></p>
+        <p class="scores">Fail counter: <span id="fails">0</span></p>
     </div>
 
     <script src="assets/js/script.js"></script>
