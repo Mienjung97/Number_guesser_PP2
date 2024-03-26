@@ -11,15 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             // Start Coin game (1 in 2 odds)
             if (this.getAttribute("data-type") === "coin") {
-                runGameCoin()
+                runCoinGame()
                 // Start die game (1 in 6 odds)
             } else if (this.getAttribute("data-type") === "die") {
-                runGameDie()
+                runDieGame()
             }
         })
     }
 
-    runGameCoin();
+    // Default game
+    runCoinGame();
 });
 
 // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
@@ -37,96 +38,63 @@ document.getElementById("guess-number").addEventListener("keydown", function (ev
  * functions for winning and loosing points are called
  * alerts for winning or loosing are in place
  */
-function runGameCoin() {
+function runCoinGame() {
 
-    changeExplanation("1");
-    scoreboard();
+    changeExplanation("coin");
+    updateScoreBoard();
 
     // create random number between 1 and 2 to simulate a coin flip
-    let num1 = Math.ceil(Math.random() * 2);
+    let randomNumber = Math.ceil(Math.random() * 2);
     // console.log for functionality test
-    console.log(num1);
+    console.log(randomNumber);
 
     // make number show on page for further testing
-    document.getElementById('number').textContent = num1;
+    document.getElementById('number').textContent = randomNumber;
 
     // make submit button work
-    document.getElementById("submit").onclick = function () {
-
-        // get guess from user from input box
-        let userGuess = parseInt(document.getElementById('guess-number').value);
-        console.log(userGuess)
-
-        // basic statement for checking the number
-        let correct = userGuess === num1;
-
-        // correct statemant
-        if (correct) {
-            alert("Amazing, you got it! Now Try again.");
-            winningStreak();
-            highestStreak();
-            runGameCoin();
-        } else {
-            // alert for when no number is entered
-            if (isNaN(userGuess)) {
-                alert("Please enter a valid number");
-                // messages for wrong answer
-            } else {
-                alert("You are wrong")
-                incrementWrongAnswer()
-            }
-        }
-        clear()
-    };
+    document.getElementById("submit").onclick = (event) => onNumberSubmit(event, randomNumber, "coin");
 };
 
-/**
- * Game two: guessing the right number with the odds of rolling a die (1 in 6)
- * functions for winning and loosing points are called
- * alerts for winning and 4 indicators of how far off the guess is
- */
-function runGameDie() {
+function onNumberSubmit(event, randomNumber, gameType) {
+     // get guess from user from input box
+     let userGuess = parseInt(document.getElementById('guess-number').value);
+     console.log(userGuess)
 
-    changeExplanation();
-    scoreboard();
+     // basic statement for checking the number
+     let correct = userGuess === randomNumber;
 
-    // create random number between 1 and 6
-    let num1 = Math.ceil(Math.random() * 6);
-    // console.log for functionality test
-    console.log(num1);
-
-    // make number show on page for further testing
-    document.getElementById('number').textContent = num1;
-
-    // make submit button work
-    document.getElementById("submit").onclick = function () {
-
-        // get guess from user from input box
-        let userGuess = parseInt(document.getElementById('guess-number').value);
-        console.log(userGuess)
-
-        // basic statement for checking the number
-        let correct = userGuess === num1;
-
-        // correct statemant
-        if (correct) {
-            alert("Amazing, you got it! Now Try again.");
-            winningStreak();
-            highestStreak();
-            runGameDie();
-        } else {
-            // alert for when no number is entered
-            if (isNaN(userGuess)) {
-                alert("Please enter a valid number");
-                // two messages for too low
-            } else if (userGuess < (num1 - 1)) {
+     // correct statemant
+     if (correct) {
+         alert("Amazing, you got it! Now Try again.");
+         winningStreak();
+         highestStreak();
+         if(gameType === "coin") {
+            runCoinGame();
+         } else {
+            runDieGame();
+         }
+         
+     } else {
+         // alert for when no number is entered
+         if (isNaN(userGuess)) {
+             alert("Please enter a valid number");
+             return;
+           
+         }
+    
+         if(gameType === "coin") {
+              // messages for wrong answer
+             alert("You are wrong")
+             incrementWrongAnswer()
+         } else {
+            if (userGuess < (randomNumber - 1)) {
                 alert("You are far too low.")
                 incrementWrongAnswer()
-            } else if (userGuess < num1) {
+            } else if (userGuess < randomNumber) {
                 alert("You are too low, but close.")
                 incrementWrongAnswer()
                 // two messages for too high
-            } else if (userGuess > (num1 + 1)) {
+            } else if (userGuess > (randomNumber + 1)) {
                 alert("You are far too high.")
                 incrementWrongAnswer()
             } else {
@@ -134,37 +102,61 @@ function runGameDie() {
                 incrementWrongAnswer()
             }
         }
-        clear();
-    };
+     }
+     clear();
+}
+
+/**
+ * Game two: guessing the right number with the odds of rolling a die (1 in 6)
+ * functions for winning and loosing points are called
+ * alerts for winning and 4 indicators of how far off the guess is
+ */
+function runDieGame() {
+
+    changeExplanation("die");
+    updateScoreBoard();
+
+    // create random number between 1 and 6
+    let randomNumber = Math.ceil(Math.random() * 6);
+    // console.log for functionality test
+    console.log(randomNumber);
+
+    // make number show on page for further testing
+    document.getElementById('number').textContent = randomNumber;
+
+    // make submit button work
+    document.getElementById("submit").onclick = (event) => onNumberSubmit(event, randomNumber, "die");
 };
 
 /**
  * Function to change outer apperance of game (explanation and logo)
  * depending on which game is selected
  */
-function changeExplanation(num) {
+function changeExplanation(gameType) {
     let explanation = document.getElementById("explanation").innerText;
-    if (num === "1") {
+    let pictureIdToShow, pictureIdToHide
+    if (gameType === "coin") {
         // next two lines of code change the explanation text for the coin toss
         explanation = "1 and 2, like a coin toss";
-        document.getElementById("explanation").innerText = explanation;
         // remove die logo
-        let picture1 = document.getElementById("logo-die")
-        picture1.classList.add("hide");
+        pictureIdToHide = "logo-die";
         // make sure coin logo is still there
-        let picture2 = document.getElementById("logo-coin")
-        picture2.classList.remove("hide");
+        pictureIdToShow = "logo-coin";
     } else {
         // next two lines of code change the explanation text for the die roll
         explanation = "1 and 6, like a die roll"
         document.getElementById("explanation").innerText = explanation;
         // toggle picture
-        let picture2 = document.getElementById("logo-coin")
-        picture2.classList.add("hide");
+        pictureIdToHide = "logo-coin";
         // make sure coin logo is still there
-        let picture1 = document.getElementById("logo-die")
-        picture1.classList.remove("hide");
+        pictureIdToShow = "logo-die";
     }
+
+    document.getElementById("explanation").innerText = explanation;
+    let picture1 = document.getElementById(pictureIdToHide)
+    picture1.classList.add("hide");
+    let picture2 = document.getElementById(pictureIdToShow)
+    picture2.classList.remove("hide");
 }
 
 /**
@@ -217,7 +209,7 @@ function highestStreak() {
 /**
  * Scoreboard
  */
-function scoreboard() {
+function updateScoreBoard() {
     let username = document.getElementById("username").value;
     document.getElementById("name").innerText = username;
     let score = document.getElementById("biggest-streak").innerText;
