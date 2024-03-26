@@ -129,20 +129,39 @@ function runGameCoin() {
 function changeExplanation(num) {
     let explanation = document.getElementById("explanation").innerText;
     if (num === "1") {
+        // next two lines of code change the explanation text for the coin toss
         explanation = "1 and 2, like a coin toss";
         document.getElementById("explanation").innerText = explanation;
-        // 
-        let picture = 
-        document.getElementById("pic").innerText = picture;
+        // remove die logo
+        let picture1 = document.getElementById("logo-die")
+        picture1.classList.add("hide");
+        // make sure coin logo is still there
+        let picture2 = document.getElementById("logo-coin")
+        picture2.classList.remove("hide");
     } else {
+        // next two lines of code change the explanation text for the die roll
         explanation = "1 and 6, like a die roll"
         document.getElementById("explanation").innerText = explanation;
-        // let picture = <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
-        // <img class="logo" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
-        //    alt="Big black die gets trown into the air">
-        document.getElementById("pic").innerText = picture;
+        // toggle picture
+        let picture2 = document.getElementById("logo-coin")
+        picture2.classList.add("hide");
+        // make sure coin logo is still there
+        let picture1 = document.getElementById("logo-die")
+        picture1.classList.remove("hide");
     }
 }
+
+
+
+
+function myFunction() {
+    var element = document.getElementById("myDIV");
+    element.classList.toggle("mystyle");
+  }
+
+
+
+
 
 // clear the input field 
 function clear() {
