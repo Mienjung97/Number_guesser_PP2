@@ -88,6 +88,14 @@ body {
     color: rgb(253, 165, 0);
 }
 
+.game-area > .score-board {
+    display: flex;
+    flex-direction: row;
+}
+.game-area li {
+    list-style-type: none;
+}
+
 .hide {
     display: none;
 }

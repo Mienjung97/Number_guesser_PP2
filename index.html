@@ -23,9 +23,13 @@
 <body>
     <h1 class="heading">
         <h1 id="head">Guess the right numbers!</h1>
-        <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
-        <img class="logo" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
-            alt="Big black die gets trown into the air">
+        <!-- 
+            Photo by <a href="https://unsplash.com/@zisun_word?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+                ZSun Fu</a> on 
+                <a href="https://unsplash.com/photos/grayscale-photography-of-person-holding-coin-b4D7FKAghoE?utm_content=creditCopy
+                Text&utm_medium=referral&utm_source=unsplash">Unsplash</a> 
+        -->
+        <img class="logo" src="assets/images/zsun-fu-b4D7FKAghoE-unsplash.jpg" alt="A coin ready to be tossed">
     </h1>
 
     <div class="username-input">
@@ -53,7 +57,7 @@
             <h3>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></h3>
         </div>
         <!-- Area to input number guess -->
-        <div class="answer-area"> 
+        <div class="answer-area">
             <input type="number" id="guess-number" placeholder="Your guess">
         </div>
         <!-- Submit button (Enter works as "click on submit") -->
@@ -69,19 +73,19 @@
         <!-- Current streak of correct guesses, resets after fail -->
         <p class="scores">Current streak: <span id="streak">0</span></p>
         <!-- Shows the greatest high score, does not reset -->
-        <p class="scores">Heighest streak: <span id="biggest-streak">0</span></p>
+        <p class="scores">Highest streak: <span id="biggest-streak">0</span></p>
         <!-- Shows the amount of fails -->
         <p class="scores">Fail counter: <span id="fails">0</span></p>
     </div>
 
     <!-- Area for storing scores corresponding to username -->
-    <div class="score-board">
-        <div>
+    <div class="game-area">
+        <div class="score-board">
             <ul id="name">
                 <li>X</li>
             </ul>
         </div>
-        <div>
+        <div class="score-board">
             <ul id="score">
                 <li>0</li>
             </ul>

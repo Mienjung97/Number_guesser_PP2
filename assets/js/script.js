@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
-    runGameCoin()
+    runGameCoin();
 });
 
 // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
@@ -33,6 +33,7 @@ document.getElementById("guess-number").addEventListener("keydown", function(eve
 function runGameDie() {
 
     changeExplanation();
+    scoreboard();
 
     // create random number between 1 and 6
     let num1 = Math.ceil(Math.random() * 6);
@@ -130,9 +131,16 @@ function changeExplanation(num) {
     if (num === "1") {
         explanation = "1 and 2, like a coin toss";
         document.getElementById("explanation").innerText = explanation;
+        // 
+        let picture = 
+        document.getElementById("pic").innerText = picture;
     } else {
         explanation = "1 and 6, like a die roll"
         document.getElementById("explanation").innerText = explanation;
+        // let picture = <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
+        // <img class="logo" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
+        //    alt="Big black die gets trown into the air">
+        document.getElementById("pic").innerText = picture;
     }
 }
 
@@ -168,3 +176,9 @@ function highestStreak() {
         document.getElementById("biggest-streak").innerText = currentWins
     }
 };
+
+// Scoreboard
+function scoreboard() {
+    let username = document.getElementById("username").value;
+    document.getElementById("name").innerText = username;
+}
