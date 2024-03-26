@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     }
-
+    //let submitUserName = document.getAttribute("subName")
+     
     // Default game
     runCoinGame();
 });
@@ -41,7 +42,7 @@ document.getElementById("guess-number").addEventListener("keydown", function (ev
 function runCoinGame() {
 
     changeExplanation("coin");
-    updateScoreBoard();
+
 
     // create random number between 1 and 2 to simulate a coin flip
     let randomNumber = Math.ceil(Math.random() * 2);
@@ -114,7 +115,7 @@ function onNumberSubmit(event, randomNumber, gameType) {
 function runDieGame() {
 
     changeExplanation("die");
-    updateScoreBoard();
+    
 
     // create random number between 1 and 6
     let randomNumber = Math.ceil(Math.random() * 6);
@@ -209,9 +210,12 @@ function highestStreak() {
 /**
  * Scoreboard
  */
+/*
 function updateScoreBoard() {
+
     let username = document.getElementById("username").value;
     document.getElementById("name").innerText = username;
     let score = document.getElementById("biggest-streak").innerText;
     document.getElementById("score").innerText = score;
 };
+*/

@@ -29,7 +29,8 @@
                 <a href="https://unsplash.com/photos/grayscale-photography-of-person-holding-coin-b4D7FKAghoE?utm_content=creditCopy
                 Text&utm_medium=referral&utm_source=unsplash">Unsplash</a> 
         -->
-        <img class="logo" id="logo-coin" src="assets/images/zsun-fu-b4D7FKAghoE-unsplash.jpg" alt="A coin ready to be tossed">
+        <img class="logo" id="logo-coin" src="assets/images/zsun-fu-b4D7FKAghoE-unsplash.jpg"
+            alt="A coin ready to be tossed">
 
         <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
         <img class="logo" id="logo-die" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
@@ -37,9 +38,11 @@
     </h1>
 
     <div class="username-input">
+        <!-- Username input required to play the game -->
         <label for="username" name="username">Create Username:</label>
         <br>
-        <input type="text" name="username" id="username" placeholder="Your Username">
+        <input type="text" name="username" id="username" placeholder="Your Username" required>
+        <button type="submit">Submit</button>
     </div>
 
     <!-- Game Area -->
@@ -84,16 +87,12 @@
 
     <!-- Area for storing scores corresponding to username -->
     <div class="game-area">
-        <div class="score-board">
-            <ul id="name">
-                <p>John Doe</p>
-            </ul>
-        </div>
-        <div class="score-board">
-            <ul id="score">
-                <p>0</p>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Highscore</th>
+            </tr>
+        </table>
     </div>
 
     <script src="assets/js/script.js"></script>
