@@ -47,18 +47,18 @@
         <!-- Buttons for choosing game -->
         <div>
             <!-- Coin flip game -->
-            <button data-type="coin" class="btn coin">
+            <button data-type="coin" class="btn coin" aria-label='Play the game "Toss the coin"'>
                 <i class="fa-solid fa-circle-half-stroke"></i>
             </button>
             <!-- Dice roll game -->
-            <button data-type="die" class="btn dice">
+            <button data-type="die" class="btn dice" aria-label='Play the game "Roll the die"'>
                 <i class="fa-solid fa-dice"></i>
             </button>
         </div>
 
         <!-- Game information display (changing with gametype - not yet implemented) -->
         <div class="game-info">
-            <h3>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></h3>
+            <p>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></p>
         </div>
         <!-- Area to input number guess -->
         <div class="answer-area">
@@ -86,12 +86,12 @@
     <div class="game-area">
         <div class="score-board">
             <ul id="name">
-                <li>X</li>
+                <p>John Doe</p>
             </ul>
         </div>
         <div class="score-board">
             <ul id="score">
-                <li>0</li>
+                <p>0</p>
             </ul>
         </div>
     </div>

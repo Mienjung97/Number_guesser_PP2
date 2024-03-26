@@ -174,6 +174,8 @@ function clear() {
     document.getElementById("guess-number").value = "";
 }
 
+// basic idea for incrementing scores was taken from love maths 
+
 /**
  * increments the current winning streak
  */
@@ -218,4 +220,6 @@ function highestStreak() {
 function scoreboard() {
     let username = document.getElementById("username").value;
     document.getElementById("name").innerText = username;
-}
+    let score = document.getElementById("biggest-streak").innerText;
+    document.getElementById("score").innerText = score;
+};
