@@ -50,7 +50,7 @@
 
         <!-- Game information display (changing with gametype - not yet implemented) -->
         <div class="game-info">
-            <p>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></p>
+            <h3>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></h3>
         </div>
         <!-- Area to input number guess -->
         <div class="answer-area"> 
@@ -72,6 +72,20 @@
         <p class="scores">Heighest streak: <span id="biggest-streak">0</span></p>
         <!-- Shows the amount of fails -->
         <p class="scores">Fail counter: <span id="fails">0</span></p>
+    </div>
+
+    <!-- Area for storing scores corresponding to username -->
+    <div class="score-board">
+        <div>
+            <ul id="name">
+                <li>X</li>
+            </ul>
+        </div>
+        <div>
+            <ul id="score">
+                <li>0</li>
+            </ul>
+        </div>
     </div>
 
     <script src="assets/js/script.js"></script>
