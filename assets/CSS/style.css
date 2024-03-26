@@ -54,10 +54,12 @@ body {
 .coin {
     background-color: rgb(0, 192, 0);
     color: black;
+    font-size: 200%;
 }
 .dice {
     background-color: red;
     color: black;
+    font-size: 200%;
 }
 
  /* Center placeholder text */
@@ -87,7 +89,7 @@ body {
 }
 
 .hide {
-   /* display: none;*/
+    display: none;
 }
 
 /* Meadia query for small screens */
