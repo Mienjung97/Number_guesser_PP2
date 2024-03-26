@@ -42,52 +42,58 @@
         <label for="username" name="username">Create Username:</label>
         <br>
         <input type="text" name="username" id="username" placeholder="Your Username" required>
-        <button type="submit">Submit</button>
+        <button type="submit" id="usernamesubmit" class="hide">Submit</button>
     </div>
 
-    <!-- Game Area -->
-    <div class="game-area">
-        <!-- Buttons for choosing game -->
-        <div>
-            <!-- Coin flip game -->
-            <button data-type="coin" class="btn coin" aria-label='Play the game "Toss the coin"'>
-                <i class="fa-solid fa-circle-half-stroke"></i>
-            </button>
-            <!-- Dice roll game -->
-            <button data-type="die" class="btn dice" aria-label='Play the game "Roll the die"'>
-                <i class="fa-solid fa-dice"></i>
-            </button>
+    <div id="begin" class="hide">
+        <!-- Game Area -->
+        <div class="game-area">
+            <!-- Buttons for choosing game -->
+            <div>
+                <!-- Coin flip game -->
+                <label for="green">Easy</label>
+                
+                <button id="green" data-type="coin" class="btn coin" aria-label='Play the game "Toss the coin"'>
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </button>
+                <!-- Dice roll game -->
+                <label for="red">Hard</label>
+                
+                <button id="red" data-type="die" class="btn dice" aria-label='Play the game "Roll the die"'>
+                    <i class="fa-solid fa-dice"></i>
+                </button>
+            </div>
+
+            <!-- Game information display (changing with gametype - not yet implemented) -->
+            <div class="game-info">
+                <p>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></p>
+            </div>
+            <!-- Area to input number guess -->
+            <div class="answer-area">
+                <input type="number" id="guess-number" placeholder="Your guess">
+            </div>
+            <!-- Submit button (Enter works as "click on submit") -->
+            <button data-type="submit" id="submit" class="btn-submit">Submit your guess</button>
+            <div class="answer">
+                <p class="hide">The number you are supposed to guess is: <span id="number">0</span></p>
+            </div>
         </div>
 
-        <!-- Game information display (changing with gametype - not yet implemented) -->
-        <div class="game-info">
-            <p>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></p>
+        <!-- For later point: introduce highscore that gets saved in browser cache -->
+        <!-- General code for scores was inspired by "love maths" project -->
+        <div class="score-area">
+            <!-- Current streak of correct guesses, resets after fail -->
+            <p class="scores">Current streak: <span id="streak">0</span></p>
+            <!-- Shows the greatest high score, does not reset -->
+            <p class="scores">Highest streak: <span id="biggest-streak">0</span></p>
+            <!-- Shows the amount of fails -->
+            <p class="scores">Fail counter: <span id="fails">0</span></p>
         </div>
-        <!-- Area to input number guess -->
-        <div class="answer-area">
-            <input type="number" id="guess-number" placeholder="Your guess">
-        </div>
-        <!-- Submit button (Enter works as "click on submit") -->
-        <button data-type="submit" id="submit" class="btn-submit">Submit your guess</button>
-        <div class="answer">
-            <p class="hide">The number you are supposed to guess is: <span id="number">0</span></p>
-        </div>
-    </div>
-
-    <!-- For later point: introduce highscore that gets saved in browser cache -->
-    <!-- General code for scores was inspired by "love maths" project -->
-    <div class="score-area">
-        <!-- Current streak of correct guesses, resets after fail -->
-        <p class="scores">Current streak: <span id="streak">0</span></p>
-        <!-- Shows the greatest high score, does not reset -->
-        <p class="scores">Highest streak: <span id="biggest-streak">0</span></p>
-        <!-- Shows the amount of fails -->
-        <p class="scores">Fail counter: <span id="fails">0</span></p>
     </div>
 
     <!-- Area for storing scores corresponding to username -->
     <div class="game-area">
-        <table>
+        <table id="highscore">
             <tr>
                 <th>Username</th>
                 <th>Highscore</th>

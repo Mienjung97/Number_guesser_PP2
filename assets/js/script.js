@@ -18,10 +18,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     }
-    //let submitUserName = document.getAttribute("subName")
-     
-    // Default game
-    runCoinGame();
+
+    alert("Please enter a username to begin!")
+
+    
+    document.getElementById("username").addEventListener("keydown", function () {
+        let showSubmit = document.getElementById("usernamesubmit");
+        showSubmit.classList.remove("hide");
+    })
+
+    document.getElementById("usernamesubmit").addEventListener("click", function() {
+        let beginGame = document.getElementById("begin");
+        beginGame.classList.remove("hide");
+        scoreBoard();
+        runCoinGame();
+    })
+
+    document.getElementById("username").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            document.getElementById("usernamesubmit").click();
+        }
+    })
+
 });
 
 // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
@@ -33,6 +51,11 @@ document.getElementById("guess-number").addEventListener("keydown", function (ev
         document.getElementById("submit").click();
     }
 })
+
+function userNameInput() {
+    // let username = document.getElementById("username").innerText;
+
+}
 
 /**
  * Game one: guessing the right number with the odds of a coin flip (1 in 2)
@@ -210,12 +233,20 @@ function highestStreak() {
 /**
  * Scoreboard
  */
-/*
-function updateScoreBoard() {
-
-    let username = document.getElementById("username").value;
-    document.getElementById("name").innerText = username;
-    let score = document.getElementById("biggest-streak").innerText;
-    document.getElementById("score").innerText = score;
+function scoreBoard() {
+  let table = document.getElementById("highscore");
+  let row = table.insertRow(-1);
+  let name = row.insertCell(-1);
+  let score = row.insertCell(1);
+  let streak = document.getElementById("biggest-streak").innerText;
+  name.innerHTML = document.getElementById("username").value;
+  score.innerHTML = streak;
 };
-*/
+
+function updateScoreBoard() {
+    let oldStreak = parseInt(document.getElementsByClassName("biggest-streak").innerText)
+    let currentWins = parseInt(document.getElementById("streak").innerText)
+    if (oldStreak < currentWins) {
+        document.getElementById("biggest-streak").innerText = currentWins
+}
+}
