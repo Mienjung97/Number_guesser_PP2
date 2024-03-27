@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("usernamesubmit").addEventListener("click", function () {
         let beginGame = document.getElementById("begin");
         beginGame.classList.remove("hide");
+        clearStreaks();
         scoreBoard();
         runCoinGame();
         document.getElementById("username").value = "";
@@ -46,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("username").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             document.getElementById("usernamesubmit").click();
-        } else {
-            clearStreaks();
         }
     })
 
@@ -242,6 +241,7 @@ function highestStreak() {
 /**
  * Scoreboard
  * Big help from Tutor Sarah to get the scores on the scoreboard working 
+ * Creates new entry for every username
  */
 function scoreBoard() {
     let table = document.getElementById("highscore");
@@ -251,7 +251,8 @@ function scoreBoard() {
     let streak = document.getElementById("biggest-streak").innerText;
     name.innerHTML = document.getElementById("username").value;
     score.innerHTML = streak;
-    
+    // Here the help starts
+
     username = document.getElementById("username").value
     score.id = `${username}-score`
     console.log(name)
@@ -261,40 +262,15 @@ function scoreBoard() {
 function updateCell() {
     let scoreCell = document.getElementById(`${username}-score`)
     let streak = document.getElementById("biggest-streak").innerText;
+
     scoreCell.innerHTML = streak
     console.log(scoreCell)
 }
 // end of text helped by sarah
 
+// known Bug: if you enter the same username as before, it will reset the score
 function clearStreaks() {
     document.getElementById("fails").innerText = 0;
     document.getElementById("biggest-streak").innerText = 0;
     document.getElementById("streak").innerText = 0;
 };
- 
-//for future use
-
-// function updateCell() {
-//     let table = document.getElementById("highscore");
-//     let streak = parseInt(document.getElementById("biggest-streak").innerText)
-//     let tableStreak = row.cells[1].innerText
-//     let rowCount = table.rows.length;
-//     if (rowCount = 1) {
-//         if (streak < tableStreak) {
-//             document.getElementById("biggest-streak").innerText = currentWins
-//         }
-//     }
-//     alert("I hope it worked");
-// };
-
-// Test updateCell function
-
-/*
-let table = document.getElementById("highscore");
-    let row = table.rows[rowIndex]; // Get the row by index
-    let cell = row.cells[cellIndex]; // Get the cell by index
-    console.log(row);
-    console.log(cell);
-    
-    //cell.innerHTML = "New Content"; // Update cell content
-*/
