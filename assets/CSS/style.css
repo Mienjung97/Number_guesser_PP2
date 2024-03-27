@@ -163,6 +163,12 @@ tr:hover {
         height: 120px;
     }
 }
+@media (min-width: 1850px) {
+    .btn {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+}
 
 /* Media query for height adjustment */
 @media (max-height: 900px) {
