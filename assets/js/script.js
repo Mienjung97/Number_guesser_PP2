@@ -1,4 +1,4 @@
-let username
+let username;
 
 /**
  * Eventlistener to load the DOM and change the game type
@@ -9,25 +9,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Buttons for game types
     let buttons = this.getElementsByTagName("button");
 
-    for (button of buttons) {
+    for (let button of buttons) {
         button.addEventListener("click", function () {
             // Start Coin game (1 in 2 odds)
             if (this.getAttribute("data-type") === "coin") {
-                runCoinGame()
+                runCoinGame();
                 // Start die game (1 in 6 odds)
             } else if (this.getAttribute("data-type") === "die") {
-                runDieGame()
+                runDieGame();
             }
-        })
+        });
     }
 
-    alert("Please enter a username to begin!")
+    alert("Please enter a username to begin!");
     document.getElementById("username").focus();
 
     document.getElementById("username").addEventListener("keydown", function () {
         let showSubmit = document.getElementById("usernamesubmit");
         showSubmit.classList.remove("hide");
-    })
+    });
 
     /**
      * After entering a username, the Scoreboard gets updated, username input field gets cleared,
@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
         runCoinGame();
         document.getElementById("username").value = "";
         clear();
-    })
+    });
 
     document.getElementById("username").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             document.getElementById("usernamesubmit").click();
         }
-    })
+    });
 
 });
 
@@ -60,7 +60,7 @@ document.getElementById("guess-number").addEventListener("keydown", function (ev
     if (event.key === "Enter") {
         document.getElementById("submit").click();
     }
-})
+});
 
 /**
  * Game one: guessing the right number with the odds of a coin flip (1 in 2)
@@ -83,12 +83,12 @@ function runCoinGame() {
 
     // make submit button work
     document.getElementById("submit").onclick = (event) => onNumberSubmit(event, randomNumber, "coin");
-};
+}
 
 function onNumberSubmit(event, randomNumber, gameType) {
     // get guess from user from input box
     let userGuess = parseInt(document.getElementById('guess-number').value);
-    console.log(userGuess)
+    console.log(userGuess);
 
     // basic statement for checking the number
     let correct = userGuess === randomNumber;
@@ -109,27 +109,26 @@ function onNumberSubmit(event, randomNumber, gameType) {
         if (isNaN(userGuess)) {
             alert("Please enter a valid number");
             return;
-
         }
 
         if (gameType === "coin") {
             // messages for wrong answer
-            alert("You are wrong")
-            incrementWrongAnswer()
+            alert("You are wrong");
+            incrementWrongAnswer();
         } else {
             if (userGuess < (randomNumber - 1)) {
-                alert("You are far too low.")
-                incrementWrongAnswer()
+                alert("You are far too low.");
+                incrementWrongAnswer();
             } else if (userGuess < randomNumber) {
-                alert("You are too low, but close.")
-                incrementWrongAnswer()
+                alert("You are too low, but close.");
+                incrementWrongAnswer();
                 // two messages for too high
             } else if (userGuess > (randomNumber + 1)) {
-                alert("You are far too high.")
-                incrementWrongAnswer()
+                alert("You are far too high.");
+                incrementWrongAnswer();
             } else {
-                alert("You are too high, but close.")
-                incrementWrongAnswer()
+                alert("You are too high, but close.");
+                incrementWrongAnswer();
             }
         }
     }
@@ -156,7 +155,7 @@ function runDieGame() {
 
     // make submit button work
     document.getElementById("submit").onclick = (event) => onNumberSubmit(event, randomNumber, "die");
-};
+}
 
 /**
  * Function to change outer apperance of game (explanation and logo)
@@ -164,7 +163,7 @@ function runDieGame() {
  */
 function changeExplanation(gameType) {
     let explanation = document.getElementById("explanation").innerText;
-    let pictureIdToShow, pictureIdToHide
+    let pictureIdToShow, pictureIdToHide;
     if (gameType === "coin") {
         // next two lines of code change the explanation text for the coin toss
         explanation = "1 and 2, like a coin toss";
@@ -174,7 +173,7 @@ function changeExplanation(gameType) {
         pictureIdToShow = "logo-coin";
     } else {
         // next two lines of code change the explanation text for the die roll
-        explanation = "1 and 6, like a die roll"
+        explanation = "1 and 6, like a die roll";
         document.getElementById("explanation").innerText = explanation;
         // toggle picture
         pictureIdToHide = "logo-coin";
@@ -183,9 +182,9 @@ function changeExplanation(gameType) {
     }
 
     document.getElementById("explanation").innerText = explanation;
-    let picture1 = document.getElementById(pictureIdToHide)
+    let picture1 = document.getElementById(pictureIdToHide);
     picture1.classList.add("hide");
-    let picture2 = document.getElementById(pictureIdToShow)
+    let picture2 = document.getElementById(pictureIdToShow);
     picture2.classList.remove("hide");
 }
 
@@ -204,10 +203,10 @@ function clear() {
  */
 function winningStreak() {
     // gets old wins from webpage
-    let oldWins = parseInt(document.getElementById("streak").innerText)
+    let oldWins = parseInt(document.getElementById("streak").innerText);
     // increments winning streak by one
-    document.getElementById("streak").innerText = ++oldWins
-};
+    document.getElementById("streak").innerText = ++oldWins;
+}
 
 /**
  * increments the amount of wrong guesses
@@ -215,28 +214,28 @@ function winningStreak() {
  */
 function incrementWrongAnswer() {
     // get old fail amount from webpage
-    let oldFails = parseInt(document.getElementById("fails").innerText)
+    let oldFails = parseInt(document.getElementById("fails").innerText);
     // increases fail amount
-    document.getElementById("fails").innerText = ++oldFails
+    document.getElementById("fails").innerText = ++oldFails;
 
     // resets the winning streak back to 0
     let streak = parseInt(document.getElementById("streak").innerText);
     streak = 0;
     document.getElementById("streak").innerText = streak;
-};
+}
 
 /**
  * Shows the highest streak achieved by the user, does not reset
  */
 function highestStreak() {
     // get old highscore from webpage
-    let oldStreak = parseInt(document.getElementById("biggest-streak").innerText)
-    let currentWins = parseInt(document.getElementById("streak").innerText)
+    let oldStreak = parseInt(document.getElementById("biggest-streak").innerText);
+    let currentWins = parseInt(document.getElementById("streak").innerText);
     if (oldStreak < currentWins) {
-        document.getElementById("biggest-streak").innerText = currentWins
+        document.getElementById("biggest-streak").innerText = currentWins;
     }
     updateCell();
-};
+}
 
 /**
  * Scoreboard
@@ -253,18 +252,18 @@ function scoreBoard() {
     score.innerHTML = streak;
     // Here the help starts
 
-    username = document.getElementById("username").value
-    score.id = `${username}-score`
-    console.log(name)
-    console.log(score)
-};
+    username = document.getElementById("username").value;
+    score.id = `${username}-score`;
+    console.log(name);
+    console.log(score);
+}
 
 function updateCell() {
-    let scoreCell = document.getElementById(`${username}-score`)
+    let scoreCell = document.getElementById(`${username}-score`);
     let streak = document.getElementById("biggest-streak").innerText;
 
-    scoreCell.innerHTML = streak
-    console.log(scoreCell)
+    scoreCell.innerHTML = streak;
+    console.log(scoreCell);
 }
 // end of text helped by sarah
 
@@ -274,4 +273,4 @@ function clearStreaks() {
     document.getElementById("fails").innerText = 0;
     document.getElementById("biggest-streak").innerText = 0;
     document.getElementById("streak").innerText = 0;
-};
+}
