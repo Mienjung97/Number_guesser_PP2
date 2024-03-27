@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     alert("Please enter a username to begin!")
-    
+    document.getElementById("username").focus();
+
     document.getElementById("username").addEventListener("keydown", function () {
         let showSubmit = document.getElementById("usernamesubmit");
         showSubmit.classList.remove("hide");
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * the game content starts with the coin game and 
      * focus shifts to guess input field
      */
-    document.getElementById("usernamesubmit").addEventListener("click", function() {
+    document.getElementById("usernamesubmit").addEventListener("click", function () {
         let beginGame = document.getElementById("begin");
         beginGame.classList.remove("hide");
         scoreBoard();
@@ -67,11 +68,10 @@ function runCoinGame() {
 
     changeExplanation("coin");
 
-
     // create random number between 1 and 2 to simulate a coin flip
     let randomNumber = Math.ceil(Math.random() * 2);
     // console.log for functionality test
-    console.log(randomNumber);
+//    console.log(randomNumber);
 
     // make number show on page for further testing
     document.getElementById('number').textContent = randomNumber;
@@ -81,37 +81,37 @@ function runCoinGame() {
 };
 
 function onNumberSubmit(event, randomNumber, gameType) {
-     // get guess from user from input box
-     let userGuess = parseInt(document.getElementById('guess-number').value);
-     console.log(userGuess)
+    // get guess from user from input box
+    let userGuess = parseInt(document.getElementById('guess-number').value);
+    console.log(userGuess)
 
-     // basic statement for checking the number
-     let correct = userGuess === randomNumber;
+    // basic statement for checking the number
+    let correct = userGuess === randomNumber;
 
-     // correct statemant
-     if (correct) {
-         alert("Amazing, you got it! Now Try again.");
-         winningStreak();
-         highestStreak();
-         if(gameType === "coin") {
+    // correct statemant
+    if (correct) {
+        alert("Amazing, you got it! Now Try again.");
+        winningStreak();
+        highestStreak();
+        if (gameType === "coin") {
             runCoinGame();
-         } else {
+        } else {
             runDieGame();
-         }
-         
-     } else {
-         // alert for when no number is entered
-         if (isNaN(userGuess)) {
-             alert("Please enter a valid number");
-             return;
-           
-         }
-    
-         if(gameType === "coin") {
-              // messages for wrong answer
-             alert("You are wrong")
-             incrementWrongAnswer()
-         } else {
+        }
+
+    } else {
+        // alert for when no number is entered
+        if (isNaN(userGuess)) {
+            alert("Please enter a valid number");
+            return;
+
+        }
+
+        if (gameType === "coin") {
+            // messages for wrong answer
+            alert("You are wrong")
+            incrementWrongAnswer()
+        } else {
             if (userGuess < (randomNumber - 1)) {
                 alert("You are far too low.")
                 incrementWrongAnswer()
@@ -127,8 +127,8 @@ function onNumberSubmit(event, randomNumber, gameType) {
                 incrementWrongAnswer()
             }
         }
-     }
-     clear();
+    }
+    clear();
 }
 
 /**
@@ -139,12 +139,12 @@ function onNumberSubmit(event, randomNumber, gameType) {
 function runDieGame() {
 
     changeExplanation("die");
-    
+
 
     // create random number between 1 and 6
     let randomNumber = Math.ceil(Math.random() * 6);
     // console.log for functionality test
-    console.log(randomNumber);
+//    console.log(randomNumber);
 
     // make number show on page for further testing
     document.getElementById('number').textContent = randomNumber;
@@ -236,28 +236,25 @@ function highestStreak() {
  * Scoreboard
  */
 function scoreBoard() {
-  let table = document.getElementById("highscore");
-  let row = table.insertRow(-1);
-  let name = row.insertCell(-1);
-  let score = row.insertCell(1);
-  let streak = document.getElementById("biggest-streak").innerText;
-  name.innerHTML = document.getElementById("username").value;
-  score.innerHTML = streak;
+    let table = document.getElementById("highscore");
+    let row = table.insertRow(-1);
+    let name = row.insertCell(-1);
+    let score = row.insertCell(1);
+    let streak = document.getElementById("biggest-streak").innerText;
+    name.innerHTML = document.getElementById("username").value;
+    score.innerHTML = streak;
 };
 
-function updateCell(rowIndex, cellIndex) {
-    var table = document.getElementById("myTable");
-    var row = table.rows[rowIndex]; // Get the row by index
-    var cell = row.cells[cellIndex]; // Get the cell by index
-    cell.innerHTML = "New Content"; // Update cell content
-}
-
 /*
-function updateScoreBoard() {
-    let oldStreak = parseInt(document.getElementsByClassName("biggest-streak").innerText)
-    let currentWins = parseInt(document.getElementById("streak").innerText)
-    if (oldStreak < currentWins) {
-        document.getElementById("biggest-streak").innerText = currentWins
-}
-}
+for future use
+
+function updateCell() {
+    let table = document.getElementById("highscore");
+    let row = table.rows[rowIndex]; // Get the row by index
+    let cell = row.cells[cellIndex]; // Get the cell by index
+    console.log(row);
+    console.log(cell);
+    
+    //cell.innerHTML = "New Content"; // Update cell content
+};
 */
