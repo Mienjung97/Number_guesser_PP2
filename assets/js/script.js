@@ -1,3 +1,5 @@
+let username
+
 /**
  * Eventlistener to load the DOM and change the game type
  * start with coin flip game
@@ -38,12 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
         scoreBoard();
         runCoinGame();
         document.getElementById("username").value = "";
-        clear()
+        clear();
     })
 
     document.getElementById("username").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             document.getElementById("usernamesubmit").click();
+        } else {
+            clearStreaks();
         }
     })
 
@@ -68,10 +72,12 @@ function runCoinGame() {
 
     changeExplanation("coin");
 
+    updateCell();
+
     // create random number between 1 and 2 to simulate a coin flip
     let randomNumber = Math.ceil(Math.random() * 2);
     // console.log for functionality test
-//    console.log(randomNumber);
+    console.log(randomNumber);
 
     // make number show on page for further testing
     document.getElementById('number').textContent = randomNumber;
@@ -144,7 +150,7 @@ function runDieGame() {
     // create random number between 1 and 6
     let randomNumber = Math.ceil(Math.random() * 6);
     // console.log for functionality test
-//    console.log(randomNumber);
+    console.log(randomNumber);
 
     // make number show on page for further testing
     document.getElementById('number').textContent = randomNumber;
@@ -230,10 +236,12 @@ function highestStreak() {
     if (oldStreak < currentWins) {
         document.getElementById("biggest-streak").innerText = currentWins
     }
+    updateCell();
 };
 
 /**
  * Scoreboard
+ * Big help from Tutor Sarah to get the scores on the scoreboard working 
  */
 function scoreBoard() {
     let table = document.getElementById("highscore");
@@ -243,18 +251,50 @@ function scoreBoard() {
     let streak = document.getElementById("biggest-streak").innerText;
     name.innerHTML = document.getElementById("username").value;
     score.innerHTML = streak;
+    
+    username = document.getElementById("username").value
+    score.id = `${username}-score`
+    console.log(name)
+    console.log(score)
 };
 
-/*
-for future use
-
 function updateCell() {
-    let table = document.getElementById("highscore");
+    let scoreCell = document.getElementById(`${username}-score`)
+    let streak = document.getElementById("biggest-streak").innerText;
+    scoreCell.innerHTML = streak
+    console.log(scoreCell)
+}
+// end of text helped by sarah
+
+function clearStreaks() {
+    document.getElementById("fails").innerText = 0;
+    document.getElementById("biggest-streak").innerText = 0;
+    document.getElementById("streak").innerText = 0;
+};
+ 
+//for future use
+
+// function updateCell() {
+//     let table = document.getElementById("highscore");
+//     let streak = parseInt(document.getElementById("biggest-streak").innerText)
+//     let tableStreak = row.cells[1].innerText
+//     let rowCount = table.rows.length;
+//     if (rowCount = 1) {
+//         if (streak < tableStreak) {
+//             document.getElementById("biggest-streak").innerText = currentWins
+//         }
+//     }
+//     alert("I hope it worked");
+// };
+
+// Test updateCell function
+
+/*
+let table = document.getElementById("highscore");
     let row = table.rows[rowIndex]; // Get the row by index
     let cell = row.cells[cellIndex]; // Get the cell by index
     console.log(row);
     console.log(cell);
     
     //cell.innerHTML = "New Content"; // Update cell content
-};
 */
