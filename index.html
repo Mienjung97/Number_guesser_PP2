@@ -49,24 +49,24 @@
         <!-- Game Area -->
         <div class="game-area">
             <div class="gamechoice">
-            <!-- Buttons for choosing game -->
-            <div>
-                <!-- Coin flip game -->
-                <label for="green">Easy</label>
-                <br>
-                <button id="green" data-type="coin" class="btn coin" aria-label='Play the game "Toss the coin"'>
-                    <i class="fa-solid fa-circle-half-stroke"></i>
-                </button>
+                <!-- Buttons for choosing game -->
+                <div>
+                    <!-- Coin flip game -->
+                    <label for="green">Easy</label>
+                    <br>
+                    <button id="green" data-type="coin" class="btn coin" aria-label='Play the game "Toss the coin"'>
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </button>
+                </div>
+                <div>
+                    <!-- Dice roll game -->
+                    <label for="red">Hard</label>
+                    <br>
+                    <button id="red" data-type="die" class="btn dice" aria-label='Play the game "Roll the die"'>
+                        <i class="fa-solid fa-dice"></i>
+                    </button>
+                </div>
             </div>
-            <div>
-                <!-- Dice roll game -->
-                <label for="red">Hard</label>
-                <br>
-                <button id="red" data-type="die" class="btn dice" aria-label='Play the game "Roll the die"'>
-                    <i class="fa-solid fa-dice"></i>
-                </button>
-            </div>
-        </div>
             <!-- Game information display (changing with gametype - not yet implemented) -->
             <div class="game-info">
                 <p>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></p>
@@ -96,11 +96,16 @@
 
     <!-- Area for storing scores corresponding to username -->
     <div class="game-area">
-        <table id="highscore">
-            <tr>
-                <th>Username</th>
-                <th>Highscore</th>
-            </tr>
+
+        <table id="highscoreTable">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="highscore">
+            </tbody>
         </table>
     </div>
 

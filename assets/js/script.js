@@ -20,18 +20,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     alert("Please enter a username to begin!")
-
     
     document.getElementById("username").addEventListener("keydown", function () {
         let showSubmit = document.getElementById("usernamesubmit");
         showSubmit.classList.remove("hide");
     })
 
+    /**
+     * After entering a username, the Scoreboard gets updated, username input field gets cleared,
+     * the game content starts with the coin game and 
+     * focus shifts to guess input field
+     */
     document.getElementById("usernamesubmit").addEventListener("click", function() {
         let beginGame = document.getElementById("begin");
         beginGame.classList.remove("hide");
         scoreBoard();
         runCoinGame();
+        document.getElementById("username").value = "";
+        clear()
     })
 
     document.getElementById("username").addEventListener("keydown", function (event) {
@@ -51,11 +57,6 @@ document.getElementById("guess-number").addEventListener("keydown", function (ev
         document.getElementById("submit").click();
     }
 })
-
-function userNameInput() {
-    // let username = document.getElementById("username").innerText;
-
-}
 
 /**
  * Game one: guessing the right number with the odds of a coin flip (1 in 2)
@@ -188,6 +189,7 @@ function changeExplanation(gameType) {
  */
 function clear() {
     document.getElementById("guess-number").value = "";
+    document.getElementById("guess-number").focus();
 }
 
 // basic idea for incrementing scores was taken from love maths 
@@ -243,6 +245,14 @@ function scoreBoard() {
   score.innerHTML = streak;
 };
 
+function updateCell(rowIndex, cellIndex) {
+    var table = document.getElementById("myTable");
+    var row = table.rows[rowIndex]; // Get the row by index
+    var cell = row.cells[cellIndex]; // Get the cell by index
+    cell.innerHTML = "New Content"; // Update cell content
+}
+
+/*
 function updateScoreBoard() {
     let oldStreak = parseInt(document.getElementsByClassName("biggest-streak").innerText)
     let currentWins = parseInt(document.getElementById("streak").innerText)
@@ -250,3 +260,4 @@ function updateScoreBoard() {
         document.getElementById("biggest-streak").innerText = currentWins
 }
 }
+*/
