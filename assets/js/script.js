@@ -6,7 +6,7 @@ let username;
  */
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Buttons for game types
+    // Buttons for game types - code was higly inspired by "Love Maths" project
     let buttons = this.getElementsByTagName("button");
 
     for (let button of buttons) {
