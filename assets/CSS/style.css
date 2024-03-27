@@ -136,9 +136,31 @@ tr:hover {
 }
 
 /* Media query for big screens */
+@media (min-width: 1000px) {
+    body {
+        font-size: 125%;
+    }
+    .btn {
+        width: 200px;
+        height: 80px;
+    }
+}
+
 @media (min-width: 1500px) {
     body {
-        font-size: 130%;
+        font-size: 150%;
+    }
+    .gamechoice{
+        display: flex;
+        justify-content: space-between;
+    }
+    .game-info {
+        position: relative;
+        margin-top: -170px;
+    }
+    .btn {
+        width: 300px;
+        height: 120px;
     }
 }
 
@@ -148,7 +170,6 @@ tr:hover {
         padding-top: 0.5rem;
     }
 }
-
 @media (max-height: 700px) {
     .logo {
         width: 60%;
