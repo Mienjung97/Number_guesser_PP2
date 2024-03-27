@@ -135,10 +135,26 @@ tr:hover {
     }
 }
 
+/* Media query for medium screens */
+@media (min-width: 700px) {
+    #head{
+        font-size: 250%;
+    }
+    .username-input {
+        font-size: 200%;
+    }
+    #username{
+        font-size: 60%;
+    }
+}
+
 /* Media query for big screens */
 @media (min-width: 1000px) {
     body {
         font-size: 125%;
+    }
+    #head{
+        font-size: 300%;
     }
     .btn {
         width: 200px;
@@ -149,6 +165,9 @@ tr:hover {
 @media (min-width: 1500px) {
     body {
         font-size: 150%;
+    }
+    #head{
+        font-size: 350%;
     }
     .gamechoice{
         display: flex;
