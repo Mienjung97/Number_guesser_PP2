@@ -1,110 +1,245 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Number Guesser
 
-Welcome Sebastian Kefer,
+Welcome to my homepage [Number Guesser](https://mienjung97.github.io/Number_guesser_PP2/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Number Guesser]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Site Overview
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Contents
 
-`python3 -m http.server`
+1. [**Site Overview**](<#site-overview>)
+2. [**Planning stage**](<#planning-stage>)
+   - [**_Idea_**](<#idea>)
+   - [**_Site aims_**](<#site-aims>)
+   - [**_Target Audience_**](<#target-audience>)
+   - [**_Site Goals_**](<#site-goals>)
+   - [**_How will I achieve my goals_**](<#how-will-i-achieve-my-goals>)
+   - [**_Site Structure_**](<#site-structure>)
+   - [**_Wireframes_**](<#wireframes>)
+   - [**_Typography_**](<#typography>)
+   - [**_Color scheme_**](<#color-scheme>)
+3. [**Features**](<#features>)
+   - [**_Navigation menu_**](<#navigation-menu>)
+   - [**_Owning Cats Homepage_**](<#owning-cats-homepage>)
+   - [**_Attributes_**](<#attributes>)
+   - [**_Survey_**](<#survey>)
+   - [**_Footer_**](<#footer>)
+4. [**Technologies Used**](<#technologies-used>)
+5. [**Testing**](<#testing>)
+   - [**Repository problems**](<#repository-problems>)
+   - [**Validation**](<#validation>)
+   - [**Responsiveness Test**](<#responsiveness-test>)
+   - [**Lighthouse**](<#lighthouse>)
+   - [**Browser Compatibility**](<#browser-compatibility>)
+6. [**Deployment**](<#deployment>)
+7. [**Credits**](<#credits>)
+   - [**_Honorable mentions_**](<#honorable-mentions>)
+   - [**_General reference_**](<#general-reference>)
+   - [**_Content_**](<#content>)
+   - [**_Media_**](<#media>)
 
-A blue button should appear to click: _Make Public_,
+# Planning stage
+## Idea 
+- 
+## Site Aims 
+- 
+## Target Audience 
+- 
+## Site Goals 
+- 
+## How will I achieve my Goals 
+- 
+[Back to top](<#contents>)
 
-Another blue button should appear to click: _Open Browser_.
+## Site Structure 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Wireframes 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The wireframes for "Number Guesser" were produced with [Balsamiq](https://balsamiq.com/). The following shows the basic design idea for mobile and desktop devices. The wireframes vary a bit from the actual webpage due to the development process.
 
-To log into the Heroku toolbelt CLI:
+- Desktop wireframes: <br>
+![wireframe-desktop]() 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Mobile wireframes: <br>
+![wireframe-mobile]()
+ 
+[Back to top](<#contents>)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Typography 
+- I have used the same "Bebas Neue" display font from google fonts for the whole project.
 
-------
+[Back to top](<#contents>)
 
-## Release History
+## Color scheme 
+For the webpage I have used orange, white, grey and black colors since they provide a good contrast. <br> The following pictures show all individual colors I have used:
+- White: <br>
+![white]() <br>
+Created with [Colors]()
+- Grey: <br>
+![grey0.3]()
+![grey0.7]()
+![grey0.9]()
+![grey1]()
+- Orange: <br>
+![orange]()
+- Red and Green for Buttons: <br>
+![red]()
+![green]() <br>
+Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+[Back to top](<#contents>)
 
-**September 20 2023:** Update Python version to 3.9.17.
+# Features 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Navigation 
+- The Navigation 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+[Back to top](<#contents>)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Game one: Coin flip
+- The first game represents the odds of a coin flip: 1 in 2. <br>
+![coinflip]()
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+[Back to top](<#contents>)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Game two: Roll a die 
+- The first game represents the odds of a coin flip: 1 in 2. <br>
+![dieroll]()
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+[Back to top](<#contents>)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+# Technologies Used 
+- [HTML5](https://html.spec.whatwg.org/) - provides the content and structure for the website.
+- [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - provides the styling.
+- [JavaScript](https://www.javascript.com/) - provides the nessesary functions to create the games.
+- [Gitpod](https://www.gitpod.io/#get-started) - used to host and edit the website.
+- [Github](https://github.com/) - used to deploy the website.
+- [Balsamiq](https://balsamiq.com/wireframes/) - used to create the wireframes.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+[Back to top](<#contents>)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+# Deployment
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The website was deployed on GitHub Pages following these steps:
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+1. Go to GitHub, navigate through Repository/settings/pages.
+2. Select "main branch" in the source tab and click save.
+3. The page should look like this, which includes the webpages address: <br>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![deployment](readme-images/deployment.PNG)
 
-------
+- Information on how to fork a project: [Fork the project](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 
-## FAQ about the uptime script
+- Information on how to clone a project: [Clone the project](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
 
-**Why have you added this script?**
+- Difference between clone and fork: "Forking creates your own copy of a repository in a remote location (for example, GitHub). Your own copy means that you will be able to contribute changes to your copy of the repository without affecting the original repository. Cloning makes a local copy of a repository, not your own copy." [Full explanation](https://www.educative.io/answers/what-is-the-difference-between-forking-and-cloning-in-git)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+[Back to top](<#contents>)
 
-**How will this affect me?**
+# Testing
+- The Website was continiously testet for responsiveness and functional JavaScript code with console.log() function. Therefore I was able to correct all the small mistakes. 
+- First I used code multiple times (same code for each game), which worked but made the code not very readable. Through guidance by my mentor, I was able to delete all the dublicate code. 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+[Back to top](<#contents>)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Repository problems
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+After trying to code very similar to the "Love Maths" project, I ran into more errors and bugs with each line of code. About halfway through, I decided to clear the js file, use the code that worked and build the following code by myself and the help of others [See Credits](<#credits>).
 
-**So….?**
+[Back to top](<#contents>)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Validation 
 
-**Can I opt out?**
+### HTML validation via [HTML-validator](https://validator.w3.org/nu/)
+- index.html: <br>
+![index-validation](readme-images/responsive-index.PNG)
+- attributes.html: <br>
+![attributes-validation](readme-images/responsive-attributes.PNG)
+- survey.html: <br>
+![survey-validation](readme-images/responsive-survey.PNG)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### CSS validation via [CSS-validator](https://jigsaw.w3.org/css-validator/validator)
+- style.css: <br>
+![style-validation](readme-images/responsive-css.PNG)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+[Back to top](<#contents>)
 
-**Anything more?**
+## Responsiveness Test
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
 
----
+|        | Galaxy Fold | Pixel 7   | iPhone 14 Pro Max | iPad Air | iPad Pro | Display <1200px | Display >1200px |
+|--------|-------------|-----------|-------------------|----------|----------|-----------------|-----------------|
+| Render |     pass    |   pass    |       pass        |   pass   |   pass   |      pass       |      pass       |
+| Images |     pass    |   pass    |       pass        |   pass   |   pass   |      pass       |      pass       |
+| Links  |     pass    |   pass    |       pass        |   pass   |   pass   |      pass       |      pass       |
 
-Happy coding!
+[Back to top](<#contents>)
+
+## Lighthouse 
+
+- The website was tested with lighthouse for both mobile and dektop screens. These are the results:
+- Mobile: <br>
+![mobile-index](readme-images/lighthouse-mobile-index.PNG)
+![mobile-attributes](readme-images/lighthouse-mobile-attributes.PNG)
+![mobile-survey](readme-images/lighthouse-mobile-survey.PNG)
+- Desktop: <br>
+![desktop-index](readme-images/lighthouse-desktop-index.PNG)
+![desktop-attributes](readme-images/lighthouse-desktop-attributes.PNG)
+![desktop-survey](readme-images/lighthouse-desktop-survey.PNG)
+
+[Back to top](<#contents>)
+
+## Browser Compatibility
+
+Owning Cats website was tested on the following browsers with no visible issues for the user: 
+- Google Chrome
+- Microsoft Edge
+- Mozilla Firefox 
+
+Appearance, functionality and responsiveness were consistent throughout for a range of device sizes and browsers.
+
+[Back to top](<#contents>)
+
+# Credits
+
+## Honorable mentions 
+I have to thank my dear partner for being so patient since there is not a lot of free time and yet she fully supports me on a daily basis. <br>
+I am also thankful for my co-student Marceillo, who I worked closly together and helped me in times of questioning. <br>
+A big thank you goes out to the Tutors who have helped me along my first protfolio project: Alan and John helped me understand some problems, helped with technical problems and guided me towards a correct code. 
+
+[Back to top](<#contents>)
+
+## General reference: 
+- The biggest help and inspiration in my first project was my Mentor Akshat Garg who helped me a lot with understanding .parent - .child connections, how to implement them in a long css code and media queries. 
+- For the Header (Drop down menu) i took great inspiration from the "Love Running" project, the Footer has been compleatly copied since I really liked the design. Only for bigger screens, the Icons for the social media platforms move closer together. <br>
+- For creating this readme, I have used example readme files from [Ewan Colquhoun](https://github.com/EwanColquhoun/wawaswoods/blob/master/README.md?plain=1#deployment) and my colleague [Marceillo](https://github.com/Marceillo) for the general overview.
+- I used some help from YouTube tutorials from [EdRoh](https://www.youtube.com/watch?v=i1FeOOhNnwU) and [Slaying The Dragon](https://www.youtube.com/watch?v=phWxA89Dy94).
+
+[Back to top](<#contents>)
+
+## Content
+
+- Font came from [Google Fonts](https://fonts.google.com/).
+- Icons came from [Font Awesome](https://fontawesome.com/).
+- Colors were created with [rgbacolorpicker](https://rgbacolorpicker.com/).
+- The color palette was created with [Colors](https://coolors.co/gradient-palette/ffffff-f5f5f5?number=2).
+- For creating the wireframes, I used [Balsamiq](https://balsamiq.com/wireframes/).
+- For rezizing the images, the tool [Reduceimages](https://www.reduceimages.com/) was used.
+- The responsive image was created with [Amiresponsive](https://ui.dev/amiresponsive).
+
+[Back to top](<#contents>)
+
+## Media
+
+- Most of the images used for the hero, background image and cat breeds were taken from [Unsplash](https://unsplash.com/), the actual links are included as comments in the code.
+- Two pictures were taken by me.
+- The information about the cat breeds was taken from [litter-robot-blog](https://www.litter-robot.com/blog/breeds-of-cats/).
+
+[Back to top](<#contents>)

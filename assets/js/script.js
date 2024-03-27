@@ -269,6 +269,7 @@ function updateCell() {
 // end of text helped by sarah
 
 // known Bug: if you enter the same username as before, it will reset the score
+// additionally it will create the same username in table, but only increments the first one
 function clearStreaks() {
     document.getElementById("fails").innerText = 0;
     document.getElementById("biggest-streak").innerText = 0;
