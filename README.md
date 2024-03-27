@@ -158,15 +158,15 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 
 ### HTML validation via [HTML-validator](https://validator.w3.org/nu/)
 - index.html: <br>
-![index-validation](readme-images/responsive-index.PNG)
+![index-validation]()
 - attributes.html: <br>
-![attributes-validation](readme-images/responsive-attributes.PNG)
+![attributes-validation]()
 - survey.html: <br>
-![survey-validation](readme-images/responsive-survey.PNG)
+![survey-validation]()
 
 ### CSS validation via [CSS-validator](https://jigsaw.w3.org/css-validator/validator)
 - style.css: <br>
-![style-validation](readme-images/responsive-css.PNG)
+![style-validation]()
 
 [Back to top](<#contents>)
 
@@ -186,13 +186,13 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 
 - The website was tested with lighthouse for both mobile and dektop screens. These are the results:
 - Mobile: <br>
-![mobile-index](readme-images/lighthouse-mobile-index.PNG)
-![mobile-attributes](readme-images/lighthouse-mobile-attributes.PNG)
-![mobile-survey](readme-images/lighthouse-mobile-survey.PNG)
+![mobile-index]()
+![mobile-attributes]()
+![mobile-survey]()
 - Desktop: <br>
-![desktop-index](readme-images/lighthouse-desktop-index.PNG)
-![desktop-attributes](readme-images/lighthouse-desktop-attributes.PNG)
-![desktop-survey](readme-images/lighthouse-desktop-survey.PNG)
+![desktop-index]()
+![desktop-attributes]()
+![desktop-survey]()
 
 [Back to top](<#contents>)
 
@@ -211,16 +211,17 @@ Appearance, functionality and responsiveness were consistent throughout for a ra
 
 ## Honorable mentions 
 I have to thank my dear partner for being so patient since there is not a lot of free time and yet she fully supports me on a daily basis. <br>
-I am also thankful for my co-student Marceillo, who I worked closly together and helped me in times of questioning. <br>
-A big thank you goes out to the Tutors who have helped me along my first protfolio project: Alan and John helped me understand some problems, helped with technical problems and guided me towards a correct code. 
+I am also thankful for my co-student Marceillo and Jan, who I worked closly together and helped me in times of questioning. <br>
+A big thank you goes out to the Tutors who have helped me along my secon protfolio project: especially Sarah helped me understand some problems, helped with technical problems and guided me towards a correct code. 
 
 [Back to top](<#contents>)
 
 ## General reference: 
-- The biggest help and inspiration in my first project was my Mentor Akshat Garg who helped me a lot with understanding .parent - .child connections, how to implement them in a long css code and media queries. 
-- For the Header (Drop down menu) i took great inspiration from the "Love Running" project, the Footer has been compleatly copied since I really liked the design. Only for bigger screens, the Icons for the social media platforms move closer together. <br>
-- For creating this readme, I have used example readme files from [Ewan Colquhoun](https://github.com/EwanColquhoun/wawaswoods/blob/master/README.md?plain=1#deployment) and my colleague [Marceillo](https://github.com/Marceillo) for the general overview.
-- I used some help from YouTube tutorials from [EdRoh](https://www.youtube.com/watch?v=i1FeOOhNnwU) and [Slaying The Dragon](https://www.youtube.com/watch?v=phWxA89Dy94).
+- The biggest help and inspiration in my first project was my Mentor Akshat Garg who helped me a lot with understanding how to evade dublicate code.
+- For incrementing the scores, I took great inspiration from the [Love Maths](https://github.com/Mienjung97/love-maths) project.
+- For creating this readme, I have used the template from my [Owning Cats](https://github.com/Mienjung97/Owning-Cats) project, which I took inspiration from [Ewan Colquhoun](https://github.com/EwanColquhoun/wawaswoods/blob/master/README.md?plain=1#deployment) and my colleague [Marceillo](https://github.com/Marceillo) for the general overview.
+- I used some help from various [YouTube](https://www.youtube.com/results?search_query=make+a+scorebord+with+username+in+javascript) tutorials, [stackoverflow](https://stackoverflow.com/) posts and [w3schools](https://www.w3schools.com/) tutorials.
+- For understanding some problems, I also used [ChatGPT](https://chat.openai.com/) to get the explainations I nedded.
 
 [Back to top](<#contents>)
 
@@ -238,8 +239,6 @@ A big thank you goes out to the Tutors who have helped me along my first protfol
 
 ## Media
 
-- Most of the images used for the hero, background image and cat breeds were taken from [Unsplash](https://unsplash.com/), the actual links are included as comments in the code.
-- Two pictures were taken by me.
-- The information about the cat breeds was taken from [litter-robot-blog](https://www.litter-robot.com/blog/breeds-of-cats/).
+- The two pictures were taken from [Unsplash](https://unsplash.com/), the actual links are included as comments in the code.
 
 [Back to top](<#contents>)
