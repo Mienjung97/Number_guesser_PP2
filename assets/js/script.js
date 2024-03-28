@@ -36,9 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     document.getElementById("usernamesubmit").addEventListener("click", function () {
         let beginGame = document.getElementById("begin");
-        let showDelete = document.getElementById("delete")
         beginGame.classList.remove("hide");
-        showDelete.classList.remove("hide");
         clearStreaks();
         scoreBoard();
         runCoinGame();
@@ -72,6 +70,8 @@ document.getElementById("guess-number").addEventListener("keydown", function (ev
 function runCoinGame() {
 
     changeExplanation("coin");
+
+    showDeleteButton();
 
     updateCell();
 
@@ -268,6 +268,14 @@ function updateCell() {
 
     scoreCell.innerHTML = streak;
     console.log(scoreCell);
+}
+
+function showDeleteButton() {
+    let l = document.getElementById("highscore").rows.length;
+    if (l > 1) {
+        let showDelete = document.getElementById("delete")
+        showDelete.classList.remove("hide");
+    }
 }
 /**
  * function to delete the last added username and score
