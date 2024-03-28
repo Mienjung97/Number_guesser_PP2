@@ -270,6 +270,9 @@ function updateCell() {
     console.log(scoreCell);
 }
 
+/**
+ * shows delete button after more than one user is existent
+ */
 function showDeleteButton() {
     let l = document.getElementById("highscore").rows.length;
     if (l > 1) {
