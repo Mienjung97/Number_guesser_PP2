@@ -5,7 +5,7 @@ Welcome to my homepage [Number Guesser](https://mienjung97.github.io/Number_gues
 ![Number Guesser](readme-images/responsiveness.PNG)
 
 ## Site Overview
-
+Number Guesser is a simple game in which you can test your luck against the odds in two games: Game "Coin", which simbolizes a coin toss with the odds of 1 in 2 and game "Die", which has the odds of rolling a six sided die. You have to create a Username to start the game, which from this point on will keep track of your current streak, your "wrong inputs" and your highest streak. The latest will be saved in the leaderboard table - which is important, since you are able to crate as much Usernames as you want, each starting with all three scores of "0". 
 
 # Contents
 
@@ -15,7 +15,6 @@ Welcome to my homepage [Number Guesser](https://mienjung97.github.io/Number_gues
    - [**_Site aims_**](<#site-aims>)
    - [**_Target Audience_**](<#target-audience>)
    - [**_Site Goals_**](<#site-goals>)
-   - [**_How will I achieve my goals_**](<#how-will-i-achieve-my-goals>)
    - [**_Site Structure_**](<#site-structure>)
    - [**_Wireframes_**](<#wireframes>)
    - [**_Typography_**](<#typography>)
@@ -42,15 +41,14 @@ Welcome to my homepage [Number Guesser](https://mienjung97.github.io/Number_gues
 
 # Planning stage
 ## Idea 
-- 
+- The idea for this webpage was to create a number guessing game that shows how hard it is to get multiple right guesses in a row. First, I thought about creating a lotto game (odds: 1 in 49, 6 times to win), but there a highscore higher than 1 would have been unlikely.
 ## Site Aims 
-- 
+- The website aims to show how hard it is, to guess multiple random outcomes in an easy and optainable way. 
 ## Target Audience 
-- 
+- Anyone who is interested in testing their luck against the odds.
 ## Site Goals 
-- 
-## How will I achieve my Goals 
-- 
+- The goal was to create two games, one game with the odds of one in two, symbolizing a coin toss, and one game with the odds of one in six, illustrating the odds of rolling a die.
+
 [Back to top](<#contents>)
 
 ## Site Structure 
@@ -76,12 +74,11 @@ The wireframes for "Number Guesser" were produced with [Balsamiq](https://balsam
 
 ## Color scheme 
 For the webpage I have used orange, white, grey and black colors since they provide a good contrast. <br> The following pictures show all individual colors I have used:
+- Grey and Orange: <br>
+![grey1](readme-images/Color_grey.png)
+![orange](readme-images/color_orange.png)
 - White: <br>
 ![white](readme-images/color_white.png)
-- Grey: <br>
-![grey1](readme-images/Color_grey.png)
-- Orange: <br>
-![orange](readme-images/color_orange.png)
 - Red and Green for Buttons: <br>
 ![red](readme-images/color_red.png)
 ![green](readme-images/color_white.png) <br>
@@ -92,7 +89,10 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 # Features 
 
 ## Navigation 
-- The Navigation 
+- The Navigation of the webpage is vers straight forward: To display the game, the user gets an alert, telling him to input a username (after confirming the alert, the focus is set to the username input). After confirming their username via the submit button or the "enter" key, the game will be displayed.
+- As default, the game "Coin" will be played. Again, after submitting the username, the focus is in the input field, which can be submitted via button or the "enter" key. 
+- The user can then decide to switch between games by clicking the corresponding button (Label "easy", green button with coin symbol: "Coin" game; Label "hard", red button with dice symbol: "Die" game)
+- By entereing a new username, the scores (besides the score board table) will be reset to "0" and a new entry in the scoreboard will be created.
 
 
 [Back to top](<#contents>)
@@ -104,7 +104,7 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 [Back to top](<#contents>)
 
 ## Game two: Roll a die 
-- The first game represents the odds of a coin flip: 1 in 2. <br>
+- The first game represents the odds of rolling a die: 1 in 6. <br>
 ![dieroll](readme-images/game_die.PNG)
 
 [Back to top](<#contents>)
@@ -185,7 +185,7 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 - Desktop: <br>
 ![desktop-index](readme-images/lh_desktop.PNG)
 <br>
-- Note: since the game starts with an almost empty screen, I disabled the "hide" class (which shows the wholepage) in the div with ID="begin" for testing with lighthouse.
+- Note: since the game starts with an almost empty screen, I disabled the "hide" class (which shows/hides the wholepage) in the div with id="begin" for testing with lighthouse to get a more accurate reading.
 
 [Back to top](<#contents>)
 
