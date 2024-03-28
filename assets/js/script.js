@@ -87,6 +87,11 @@ function runCoinGame() {
     document.getElementById("submit").onclick = (event) => onNumberSubmit(event, randomNumber, "coin");
 }
 
+/**
+ * Basic code for checking the numbers depending on which game is played
+ * Mentor Akshat Garg helped splitting two seperate game functions into 
+ * two functions that will not show dublicate code
+ */
 function onNumberSubmit(event, randomNumber, gameType) {
     // get guess from user from input box
     let userGuess = parseInt(document.getElementById('guess-number').value);
@@ -239,6 +244,38 @@ function highestStreak() {
     updateCell();
 }
 
+/* Code from tutor Thomas (https://github.com/ThomasWharton/manga-quiz/blob/main/assets/js/script.js) - alternative to scoreboard?
+const submitScore = () => {
+    if (!usernameInputRef.value){
+        alert('Please enter a username');
+        return;
+    }
+    const submittedScore = {
+        score: +finalScoreRef.innerText,
+        user: usernameInputRef.value
+    };    
+    highScores.push(submittedScore);
+    highScores.sort((a, b) => b.score - a.score);
+    highScores.splice(5);
+
+    sessionStorage.setItem('highScores', JSON.stringify(highScores));
+
+    highScoresListRef.innerHTML = highScores.map(highScore => {
+        return `<li class='high-score'>
+                    <span>${highScore.user}</span>
+                    <span>${highScore.score}</span>
+                </li>`;
+    })
+    .join('');
+    initialise();
+
+    resultWindowRef.classList.add('hidden');
+    leaderboardWindowRef.classList.remove('hidden');
+    closeLeaderboardBtnRef.addEventListener('click', closeLeaderboard);
+};
+*/
+
+
 /**
  * Scoreboard
  * Big help from Tutor Sarah to get the scores on the scoreboard working 
@@ -287,7 +324,7 @@ function deleteRow() {
     let table = document.getElementById("highscore");
     let row = table.deleteRow(-1);
 }
-// end of text helped by sarah
+// end of text helped by Tutor Sarah
 
 // known Bug: if you enter the same username as before, it will reset the score
 // additionally it will create the same username in table, but only increments the first one

@@ -19,7 +19,7 @@ body {
 }
 
 /* Username input */
-.username-input {
+#username-input {
     padding: 1rem;
 }
 
@@ -152,7 +152,7 @@ tr:hover {
     #head{
         font-size: 250%;
     }
-    .username-input {
+    #username-input {
         font-size: 200%;
     }
     #username{

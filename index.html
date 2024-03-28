@@ -37,12 +37,12 @@
             alt="Big black die gets trown into the air">
     </div>
 
-    <div class="username-input">
+    <div id="username-input">
         <!-- Username input required to play the game -->
         <label for="username">Create Username:</label>
         <br>
         <input type="text" name="username" id="username" placeholder="Your Username" required>
-        <button type="submit" id="usernamesubmit" class="hide">Submit</button>
+        <button type="submit" id="usernamesubmit">Submit</button>
     </div>
 
     <div id="begin" class="hide"> 
@@ -107,7 +107,6 @@
             <tbody id="highscore">
             </tbody>
         </table>
-        <button onclick="deleteRow()" id="delete" class="btn-small hide">Delete last user</button>
     </div>
 
     <script src="assets/js/script.js"></script>
