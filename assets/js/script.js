@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let button of buttons) {
         button.addEventListener("click", function () {
+            // make const to remove dublicate code
             const buttonType = this.getAttribute("data-type");
             // Start Coin game (1 in 2 odds)
             if (buttonType === "coin") {
@@ -247,56 +248,56 @@ function highestStreak() {
 /**
  * Scoreboard
  * Big help from Tutor Sarah to get the scores on the scoreboard working 
+ * Code was greatly revised by my mentor to make local storage possible
  * Creates new entry for every username
  */
-function scoreBoard() {
+function refreshScoreboard() {
     let table = document.getElementById("highscore");
-    let row = table.insertRow(-1);
-    let name = row.insertCell(-1);
-    let score = row.insertCell(1);
-    let streak = document.getElementById("biggest-streak").innerText;
-    name.innerHTML = document.getElementById("username").value;
-    score.innerHTML = streak;
-    // Here the help starts
 
-    username = document.getElementById("username").value;
-    score.id = `${username}-score`;
-    console.log(name);
-    console.log(score);
+    // 1st delete all the rows
+    let numberOfRows = table.rows.length;
+    while (numberOfRows--) {
+        table.deleteRow(-1);
+    }
+
+    // Recerate table here
+    let highScores = JSON.parse(localStorage.getItem("high-scores") || "[]");
+    highScores.sort((scoreA, scoreB) => scoreB.score - scoreA.score);
+    for (const eachScore of highScores) {
+        console.log("---", eachScore);
+        let row = table.insertRow(-1);
+        let name = row.insertCell(-1);
+        let score = row.insertCell(1);
+
+        name.innerHTML = eachScore.username;
+        score.innerHTML = eachScore.score;
+        score.id = `${eachScore.username}-score`;
+    }
 }
 /**
  * Updates the score of current user on the scoreboard if a new highscore has been achieved
+ * saves scoreboard to local storage (created with help from my mentor)
  */
 function updateCell() {
     let scoreCell = document.getElementById(`${username}-score`);
     let streak = document.getElementById("biggest-streak").innerText;
 
     scoreCell.innerHTML = streak;
-    console.log(scoreCell);
+
+    const userScore = {
+        username: username,
+        score: streak
+    };
+    // saves scoreboard to local storage via JSON
+    let scoreboardData = JSON.parse(localStorage.getItem("high-scores") || "[]");
+    scoreboardData = [{
+        ...userScore
+    }, ...scoreboardData.filter(score => score.username !== username)].sort((scoreA, scoreB) => scoreA.score > scoreB.score);
+
+    refreshScoreboard();
 }
 
-/**
- * shows delete button after more than one user is existent
- */
-function showDeleteButton() {
-    let l = document.getElementById("highscore").rows.length;
-    if (l > 1) {
-        let showDelete = document.getElementById("delete")
-        showDelete.classList.remove("hide");
-    }
-}
-/**
- * function to delete the last added username and score
- */
-function deleteRow() {
-    let table = document.getElementById("highscore");
-    let row = table.deleteRow(-1);
-}
-// end of text helped by Tutor Sarah
-
-// known Bug: if you enter the same username as before, it will reset the score
-// additionally it will create the same username in table, but only increments the first one
-function clearStreaks() {
+function resetStreaksValue() {
     document.getElementById("fails").innerText = 0;
     document.getElementById("biggest-streak").innerText = 0;
     document.getElementById("streak").innerText = 0;
