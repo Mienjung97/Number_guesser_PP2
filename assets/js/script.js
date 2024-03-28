@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const userNameNode = document.getElementById("username");
     userNameNode.focus();
 
-
     /**
      * After entering a username, the Scoreboard gets updated, username input field gets hidden,
      * scoreboard gets loaded from local storage (if existent)
@@ -54,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("usernamesubmit").click();
         }
     });
-
 
     // Buttons for game types - code was higly inspired by "Love Maths" project
     let buttons = this.getElementsByTagName("button");
@@ -119,7 +117,6 @@ function runCoinGame() {
 function onNumberSubmit(event, randomNumber, gameType) {
     // get guess from user from input box
     let userGuess = parseInt(document.getElementById('guess-number').value);
-    console.log(userGuess);
 
     // basic statement for checking the number
     let correct = userGuess === randomNumber;
@@ -228,7 +225,6 @@ function clear() {
 }
 
 // basic idea for incrementing scores was taken from love maths 
-
 /**
  * increments the current winning streak
  */
@@ -287,7 +283,6 @@ function refreshScoreboard() {
     let highScores = JSON.parse(localStorage.getItem("high-scores") || "[]");
     highScores.sort((scoreA, scoreB) => scoreB.score - scoreA.score);
     for (const eachScore of highScores) {
-        console.log("---", eachScore);
         let row = table.insertRow(-1);
         let name = row.insertCell(-1);
         let score = row.insertCell(1);
@@ -297,6 +292,7 @@ function refreshScoreboard() {
         score.id = `${eachScore.username}-score`;
     }
 }
+
 /**
  * Updates the score of current user on the scoreboard if a new highscore has been achieved
  * saves scoreboard to local storage (created with help from my mentor)
@@ -317,10 +313,13 @@ function updateCell() {
         ...userScore
     }, ...scoreboardData.filter(score => score.username !== username)].sort((scoreA, scoreB) => scoreA.score > scoreB.score);
     localStorage.setItem("high-scores", JSON.stringify(scoreboardData));
-    console.log(scoreCell);
+
     refreshScoreboard();
 }
 
+/**
+ * reset all streaks with new username
+ */
 function resetStreaksValue() {
     document.getElementById("fails").innerText = 0;
     document.getElementById("biggest-streak").innerText = 0;
