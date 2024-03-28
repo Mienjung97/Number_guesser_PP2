@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const userNameNode = document.getElementById("username");
     userNameNode.focus();
 
-    
+
     /**
      * After entering a username, the Scoreboard gets updated, username input field gets hidden,
      * scoreboard gets loaded from local storage (if existent)
@@ -33,7 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const userNameExists = scoreboardData.filter(score => score.username === username).length > 0;
         let dataToWrite = [...scoreboardData];
         if (!userNameExists) {
-            dataToWrite = [...dataToWrite, { username, score: 0 }];
+            dataToWrite = [...dataToWrite, {
+                username,
+                score: 0
+            }];
         }
         // loading from local storage
         localStorage.setItem("high-scores", JSON.stringify(dataToWrite));
@@ -313,7 +316,8 @@ function updateCell() {
     scoreboardData = [{
         ...userScore
     }, ...scoreboardData.filter(score => score.username !== username)].sort((scoreA, scoreB) => scoreA.score > scoreB.score);
-
+    localStorage.setItem("high-scores", JSON.stringify(scoreboardData));
+    console.log(scoreCell);
     refreshScoreboard();
 }
 
