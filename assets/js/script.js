@@ -286,7 +286,6 @@ function showDeleteButton() {
 function deleteRow() {
     let table = document.getElementById("highscore");
     let row = table.deleteRow(-1);
-    row;
 }
 // end of text helped by sarah
 
