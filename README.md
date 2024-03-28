@@ -144,6 +144,14 @@ The website was deployed on GitHub Pages following these steps:
 
 [Back to top](<#contents>)
 
+## Bugs
+- In Mozilla Firefox, the borders of the buttons in the "game-area" will be displayed as a white color: <br>
+![mozilla-bug](readme-images/firefox_bug.PNG) 
+- Bceause the scoreboard will be created with JavaScript and the "score" cell will get assigned an id with use of the username, creating the same username multiple times is possible, but leads to problems: The cell id is bound by the username and creating a new username will reset the "highest score" which is used to build the score board - so if a username gets entered twice, it will reset the previous score for the username as well.
+- When creating the same useranme multiple times, only the score of the first entry in the scoreboard will be increased.
+
+[Back to top](<#contents>)
+
 ## Repository problems
 
 After trying to code very similar to the "Love Maths" project, I ran into more errors and bugs with each line of code. About halfway through, I decided to clear the js file, use the code that worked and build the following code by myself and the help of others [See Credits](<#credits>).
