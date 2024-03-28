@@ -1,5 +1,4 @@
 let username;
-
 /**
  * Eventlistener to load the DOM and change the game type
  * start with coin flip game
@@ -11,11 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let button of buttons) {
         button.addEventListener("click", function () {
+            const buttonType = this.getAttribute("data-type");
             // Start Coin game (1 in 2 odds)
-            if (this.getAttribute("data-type") === "coin") {
+            if (buttonType === "coin") {
                 runCoinGame();
                 // Start die game (1 in 6 odds)
-            } else if (this.getAttribute("data-type") === "die") {
+            } else if (buttonType === "die") {
                 runDieGame();
             }
         });
@@ -243,38 +243,6 @@ function highestStreak() {
     }
     updateCell();
 }
-
-/* Code from tutor Thomas (https://github.com/ThomasWharton/manga-quiz/blob/main/assets/js/script.js) - alternative to scoreboard?
-const submitScore = () => {
-    if (!usernameInputRef.value){
-        alert('Please enter a username');
-        return;
-    }
-    const submittedScore = {
-        score: +finalScoreRef.innerText,
-        user: usernameInputRef.value
-    };    
-    highScores.push(submittedScore);
-    highScores.sort((a, b) => b.score - a.score);
-    highScores.splice(5);
-
-    sessionStorage.setItem('highScores', JSON.stringify(highScores));
-
-    highScoresListRef.innerHTML = highScores.map(highScore => {
-        return `<li class='high-score'>
-                    <span>${highScore.user}</span>
-                    <span>${highScore.score}</span>
-                </li>`;
-    })
-    .join('');
-    initialise();
-
-    resultWindowRef.classList.add('hidden');
-    leaderboardWindowRef.classList.remove('hidden');
-    closeLeaderboardBtnRef.addEventListener('click', closeLeaderboard);
-};
-*/
-
 
 /**
  * Scoreboard
