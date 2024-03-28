@@ -2,7 +2,7 @@
 
 Welcome to my homepage [Number Guesser](https://mienjung97.github.io/Number_guesser_PP2/)
 
-![Number Guesser]()
+![Number Guesser](readme-images/responsiveness.PNG)
 
 ## Site Overview
 
@@ -77,18 +77,14 @@ The wireframes for "Number Guesser" were produced with [Balsamiq](https://balsam
 ## Color scheme 
 For the webpage I have used orange, white, grey and black colors since they provide a good contrast. <br> The following pictures show all individual colors I have used:
 - White: <br>
-![white]() <br>
-Created with [Colors]()
+![white](readme-images/color_white.PNG) <br>
 - Grey: <br>
-![grey0.3]()
-![grey0.7]()
-![grey0.9]()
-![grey1]()
+![grey1](readme-images/Color_grey.PNG)
 - Orange: <br>
-![orange]()
+![orange](readme-images/color_orange.PNG)
 - Red and Green for Buttons: <br>
-![red]()
-![green]() <br>
+![red](readme-images/color_red.PNG)
+![green](readme-images/color_green.PNG) <br>
 Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 
 [Back to top](<#contents>)
@@ -158,15 +154,14 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 
 ### HTML validation via [HTML-validator](https://validator.w3.org/nu/)
 - index.html: <br>
-![index-validation]()
-- attributes.html: <br>
-![attributes-validation]()
-- survey.html: <br>
-![survey-validation]()
+![index-validation](readme-images/validation_html.PNG)
 
 ### CSS validation via [CSS-validator](https://jigsaw.w3.org/css-validator/validator)
 - style.css: <br>
-![style-validation]()
+![style-validation](readme-images/validation_css.PNG)
+
+### JS Validation via [jshint](https://jshint.com/)
+![javascript-validation]
 
 [Back to top](<#contents>)
 
@@ -186,13 +181,11 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 
 - The website was tested with lighthouse for both mobile and dektop screens. These are the results:
 - Mobile: <br>
-![mobile-index]()
-![mobile-attributes]()
-![mobile-survey]()
+![mobile-index](readme-images/lh_mobile.PNG)
 - Desktop: <br>
-![desktop-index]()
-![desktop-attributes]()
-![desktop-survey]()
+![desktop-index](readme-images/lh_desktop.PNG)
+<br>
+- Note: since the game starts with an almost empty screen, I disabled the "hide" class (which shows the wholepage) in the div with ID="begin" for testing with lighthouse.
 
 [Back to top](<#contents>)
 
@@ -230,7 +223,6 @@ A big thank you goes out to the Tutors who have helped me along my secon protfol
 - Font came from [Google Fonts](https://fonts.google.com/).
 - Icons came from [Font Awesome](https://fontawesome.com/).
 - Colors were created with [rgbacolorpicker](https://rgbacolorpicker.com/).
-- The color palette was created with [Colors](https://coolors.co/gradient-palette/ffffff-f5f5f5?number=2).
 - For creating the wireframes, I used [Balsamiq](https://balsamiq.com/wireframes/).
 - For rezizing the images, the tool [Reduceimages](https://www.reduceimages.com/) was used.
 - The responsive image was created with [Amiresponsive](https://ui.dev/amiresponsive).
