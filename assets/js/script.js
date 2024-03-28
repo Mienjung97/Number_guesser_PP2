@@ -36,7 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     document.getElementById("usernamesubmit").addEventListener("click", function () {
         let beginGame = document.getElementById("begin");
+        let showDelete = document.getElementById("delete")
         beginGame.classList.remove("hide");
+        showDelete.classList.remove("hide");
         clearStreaks();
         scoreBoard();
         runCoinGame();
@@ -257,13 +259,23 @@ function scoreBoard() {
     console.log(name);
     console.log(score);
 }
-
+/**
+ * Updates the score of current user on the scoreboard if a new highscore has been achieved
+ */
 function updateCell() {
     let scoreCell = document.getElementById(`${username}-score`);
     let streak = document.getElementById("biggest-streak").innerText;
 
     scoreCell.innerHTML = streak;
     console.log(scoreCell);
+}
+/**
+ * function to delete the last added username and score
+ */
+function deleteRow() {
+    let table = document.getElementById("highscore");
+    let row = table.deleteRow(-1);
+    row;
 }
 // end of text helped by sarah
 

@@ -55,6 +55,15 @@ body {
     margin: 2%;
     font-weight: 700;
 }
+.btn-small {
+    width: 8rem;
+    height: 3rem;
+    border-radius: 5px;
+    margin: 2%;
+    font-weight: 700;
+    background-color: black;
+    color: white;
+}
 
 /* Set color for different game types */
 .coin {
@@ -119,7 +128,10 @@ tr:hover {
     .logo {
         width: 75%;
     }
-
+    .btn-small {
+        width: 100px;
+        height: 2rem;
+    }
     .game-area {
         padding: 5%;
     }
