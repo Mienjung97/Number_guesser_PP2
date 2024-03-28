@@ -15,7 +15,6 @@ Number Guesser is a simple game in which you can test your luck against the odds
    - [**_Site aims_**](<#site-aims>)
    - [**_Target Audience_**](<#target-audience>)
    - [**_Site Goals_**](<#site-goals>)
-   - [**_Wireframes_**](<#wireframes>)
    - [**_Typography_**](<#typography>)
    - [**_Color scheme_**](<#color-scheme>)
 3. [**Features**](<#features>)
@@ -51,18 +50,6 @@ Number Guesser is a simple game in which you can test your luck against the odds
 
 [Back to top](<#contents>)
 
-## Wireframes 
-
-The wireframes for "Number Guesser" were produced with [Balsamiq](https://balsamiq.com/). The following shows the basic design idea for mobile and desktop devices. The wireframes vary a bit from the actual webpage due to the development process.
-
-- Desktop wireframes: <br>
-![wireframe-desktop]() 
-
-- Mobile wireframes: <br>
-![wireframe-mobile]()
- 
-[Back to top](<#contents>)
-
 ## Typography 
 - I have used the same "Bebas Neue" display font from google fonts for the whole project.
 
@@ -93,10 +80,11 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 [Back to top](<#contents>)
 
 ## Create a Username
-- First an alert promt shows up informing the user to create a username and once the alert has been dismissed, the focus will go to the input field: <br>
+- First an alert promt shows up informing the user to create a username: <br> 
 ![alert](readme-images/username_1st.PNG)
+- Once the alert has been dismissed, the focus will go to the input field: <br>
 ![username-input](readme-images/username_2nd.PNG)
-
+- After a username has been set, the game "Coin" starts and becomes visible for the user.
 
 [Back to top](<#contents>)
 
@@ -107,7 +95,7 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 [Back to top](<#contents>)
 
 ## Game two: Roll a die 
-- The first game represents the odds of rolling a die: 1 in 6. <br>
+- The second game represents the odds of rolling a die: 1 in 6. <br>
 ![dieroll](readme-images/game_die.PNG)
 
 [Back to top](<#contents>)
@@ -245,7 +233,6 @@ A big thank you goes out to the Tutors who have helped me along my secon protfol
 - Font came from [Google Fonts](https://fonts.google.com/).
 - Icons came from [Font Awesome](https://fontawesome.com/).
 - Colors were created with [rgbacolorpicker](https://rgbacolorpicker.com/).
-- For creating the wireframes, I used [Balsamiq](https://balsamiq.com/wireframes/).
 - For rezizing the images, the tool [Images Resizer](https://imageresizer.com/) was used.
 - The responsive image was created with [Amiresponsive](https://ui.dev/amiresponsive).
 
