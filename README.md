@@ -77,14 +77,14 @@ The wireframes for "Number Guesser" were produced with [Balsamiq](https://balsam
 ## Color scheme 
 For the webpage I have used orange, white, grey and black colors since they provide a good contrast. <br> The following pictures show all individual colors I have used:
 - White: <br>
-![white](readme-images/color_white.PNG) <br>
+![white](readme-images/color_white.png)
 - Grey: <br>
-![grey1](readme-images/Color_grey.PNG)
+![grey1](readme-images/Color_grey.png)
 - Orange: <br>
-![orange](readme-images/color_orange.PNG)
+![orange](readme-images/color_orange.png)
 - Red and Green for Buttons: <br>
-![red](readme-images/color_red.PNG)
-![green](readme-images/color_green.PNG) <br>
+![red](readme-images/color_red.png)
+![green](readme-images/color_white.png) <br>
 Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 
 [Back to top](<#contents>)
@@ -99,13 +99,13 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 
 ## Game one: Coin flip
 - The first game represents the odds of a coin flip: 1 in 2. <br>
-![coinflip]()
+![coinflip](readme-images/game_coin.PNG)
 
 [Back to top](<#contents>)
 
 ## Game two: Roll a die 
 - The first game represents the odds of a coin flip: 1 in 2. <br>
-![dieroll]()
+![dieroll](readme-images/game_die.PNG)
 
 [Back to top](<#contents>)
 
@@ -224,7 +224,7 @@ A big thank you goes out to the Tutors who have helped me along my secon protfol
 - Icons came from [Font Awesome](https://fontawesome.com/).
 - Colors were created with [rgbacolorpicker](https://rgbacolorpicker.com/).
 - For creating the wireframes, I used [Balsamiq](https://balsamiq.com/wireframes/).
-- For rezizing the images, the tool [Reduceimages](https://www.reduceimages.com/) was used.
+- For rezizing the images, the tool [Images Resizer](https://imageresizer.com/) was used.
 - The responsive image was created with [Amiresponsive](https://ui.dev/amiresponsive).
 
 [Back to top](<#contents>)
