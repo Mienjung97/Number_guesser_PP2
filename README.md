@@ -15,18 +15,18 @@ Number Guesser is a simple game in which you can test your luck against the odds
    - [**_Site aims_**](<#site-aims>)
    - [**_Target Audience_**](<#target-audience>)
    - [**_Site Goals_**](<#site-goals>)
-   - [**_Site Structure_**](<#site-structure>)
    - [**_Wireframes_**](<#wireframes>)
    - [**_Typography_**](<#typography>)
    - [**_Color scheme_**](<#color-scheme>)
 3. [**Features**](<#features>)
-   - [**_Navigation menu_**](<#navigation-menu>)
-   - [**_Owning Cats Homepage_**](<#owning-cats-homepage>)
-   - [**_Attributes_**](<#attributes>)
-   - [**_Survey_**](<#survey>)
-   - [**_Footer_**](<#footer>)
+   - [**_Navigation_**](<#navigation>)
+   - [**_Create a Username_**](<#create-a-username>)
+   - [**_Game one: Coin flip_**](<#game-one:-coin-flip>)
+   - [**_Game two: Roll a die_**](<#game-two:-roll-a-die>)
+   - [**_Scoreboard_**](<#scoreboard>)
 4. [**Technologies Used**](<#technologies-used>)
 5. [**Testing**](<#testing>)
+   - [**Bugs**](<#bugs>)
    - [**Repository problems**](<#repository-problems>)
    - [**Validation**](<#validation>)
    - [**Responsiveness Test**](<#responsiveness-test>)
@@ -50,10 +50,6 @@ Number Guesser is a simple game in which you can test your luck against the odds
 - The goal was to create two games, one game with the odds of one in two, symbolizing a coin toss, and one game with the odds of one in six, illustrating the odds of rolling a die.
 
 [Back to top](<#contents>)
-
-## Site Structure 
-
-
 
 ## Wireframes 
 
@@ -94,6 +90,13 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 - The user can then decide to switch between games by clicking the corresponding button (Label "easy", green button with coin symbol: "Coin" game; Label "hard", red button with dice symbol: "Die" game)
 - By entereing a new username, the scores (besides the score board table) will be reset to "0" and a new entry in the scoreboard will be created.
 
+[Back to top](<#contents>)
+
+## Create a Username
+- First an alert promt shows up informing the user to create a username and once the alert has been dismissed, the focus will go to the input field: <br>
+![alert](readme-images/username_1st.PNG)
+![username-input](readme-images/username_2nd.PNG)
+
 
 [Back to top](<#contents>)
 
@@ -109,6 +112,17 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 
 [Back to top](<#contents>)
 
+## Scoreboard
+- The scoreboard will show as many usernames as the user will put in.
+- The following picture still has USER3 as an active player, so all scores are still shown. <br>
+![scoreboard-new-user](readme-images/multiple_users_score.PNG) <br>
+<br>
+- As soon as USER4 will be entered, it will reset all score keeping items and add a new user: <br>
+![scoreboard](readme-images/multiple_users.PNG)
+
+
+
+[Back to top](<#contents>)
 
 # Technologies Used 
 - [HTML5](https://html.spec.whatwg.org/) - provides the content and structure for the website.
