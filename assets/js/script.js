@@ -5,6 +5,54 @@ let username;
  */
 document.addEventListener("DOMContentLoaded", function () {
 
+    refreshScoreboard();
+
+    // focus on username input
+    const userNameNode = document.getElementById("username");
+    userNameNode.focus();
+
+    
+    /**
+     * After entering a username, the Scoreboard gets updated, username input field gets hidden,
+     * scoreboard gets loaded from local storage (if existent)
+     * the game content starts with the coin game and 
+     * focus shifts to guess input field
+     */
+    document.getElementById("usernamesubmit").addEventListener("click", function () {
+        let beginGame = document.getElementById("begin");
+        beginGame.classList.remove("hide");
+
+        username = userNameNode.value;
+        // hides input field for username after adding one
+        document.getElementById("username-input").classList.add("hide");
+
+        // pre work for loading local storage
+        let scoreboardData = JSON.parse(localStorage.getItem("high-scores") || "[]");
+
+        // checks if username already exists - if yes, you will continue with username, if not, it will create new entry
+        const userNameExists = scoreboardData.filter(score => score.username === username).length > 0;
+        let dataToWrite = [...scoreboardData];
+        if (!userNameExists) {
+            dataToWrite = [...dataToWrite, { username, score: 0 }];
+        }
+        // loading from local storage
+        localStorage.setItem("high-scores", JSON.stringify(dataToWrite));
+
+        resetStreaksValue();
+        // refreshScoreboard has to be run again, first time for getting the data, second time to write it down
+        refreshScoreboard();
+        runCoinGame();
+        clear();
+    });
+
+    // make "Enter" key behave like submit
+    userNameNode.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            document.getElementById("usernamesubmit").click();
+        }
+    });
+
+
     // Buttons for game types - code was higly inspired by "Love Maths" project
     let buttons = this.getElementsByTagName("button");
 
@@ -22,33 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    alert("Please enter a username to begin!");
-    document.getElementById("username").focus();
-
     document.getElementById("username").addEventListener("keydown", function () {
         let showSubmit = document.getElementById("usernamesubmit");
         showSubmit.classList.remove("hide");
-    });
-
-    /**
-     * After entering a username, the Scoreboard gets updated, username input field gets cleared,
-     * the game content starts with the coin game and 
-     * focus shifts to guess input field
-     */
-    document.getElementById("usernamesubmit").addEventListener("click", function () {
-        let beginGame = document.getElementById("begin");
-        beginGame.classList.remove("hide");
-        clearStreaks();
-        scoreBoard();
-        runCoinGame();
-        document.getElementById("username").value = "";
-        clear();
-    });
-
-    document.getElementById("username").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            document.getElementById("usernamesubmit").click();
-        }
     });
 
 });
@@ -71,10 +95,6 @@ document.getElementById("guess-number").addEventListener("keydown", function (ev
 function runCoinGame() {
 
     changeExplanation("coin");
-
-    showDeleteButton();
-
-    updateCell();
 
     // create random number between 1 and 2 to simulate a coin flip
     let randomNumber = Math.ceil(Math.random() * 2);
@@ -288,7 +308,7 @@ function updateCell() {
         username: username,
         score: streak
     };
-    // saves scoreboard to local storage via JSON
+    // saves scoreboard to local storage via JSON and sorts highscores
     let scoreboardData = JSON.parse(localStorage.getItem("high-scores") || "[]");
     scoreboardData = [{
         ...userScore
