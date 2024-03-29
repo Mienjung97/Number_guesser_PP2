@@ -179,7 +179,10 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 ![style-validation](readme-images/validation_css.PNG)
 
 ### JS Validation via [jshint](https://jshint.com/)
-![javascript-validation]
+- script.js: 55 warnings were showed, none of them important. <br>
+![javascript-validation1](readme-images/jshint_1.PNG)
+![javascript-validation1](readme-images/jshint_2.PNG)
+![javascript-validation1](readme-images/jshint_3.PNG)
 
 [Back to top](<#contents>)
 
