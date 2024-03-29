@@ -26,6 +26,7 @@ Number Guesser is a simple game in which you can test your luck against the odds
 4. [**Technologies Used**](<#technologies-used>)
 5. [**Testing**](<#testing>)
    - [**Bugs**](<#bugs>)
+   - [**Bugfixes**](<#bugfixes>)
    - [**Repository problems**](<#repository-problems>)
    - [**Validation**](<#validation>)
    - [**Responsiveness Test**](<#responsiveness-test>)
@@ -142,13 +143,22 @@ The website was deployed on GitHub Pages following these steps:
 - The Website was continiously testet for responsiveness and functional JavaScript code with console.log() function. Therefore I was able to correct all the small mistakes. 
 - First I used code multiple times (same code for each game), which worked but made the code not very readable. Through guidance by my mentor, I was able to delete all the dublicate code. 
 
+
+
 [Back to top](<#contents>)
 
 ## Bugs
 - In Mozilla Firefox, the borders of the buttons in the "game-area" will be displayed as a white color: <br>
 ![mozilla-bug](readme-images/firefox_bug.PNG) 
-- Bceause the scoreboard will be created with JavaScript and the "score" cell will get assigned an id with use of the username, creating the same username multiple times is possible, but leads to problems: The cell id is bound by the username and creating a new username will reset the "highest score" which is used to build the score board - so if a username gets entered twice, it will reset the previous score for the username as well.
-- When creating the same useranme multiple times, only the score of the first entry in the scoreboard will be increased.
+- In the attempt of exchanging the alert() function with modals, I created a bug which only appears, if the user tries to submit the number guess via the keyboard: since the eventListener is waiting for a "keyup", the message only will be displayed as long as the "enter" key gets held down. This results in an alert for passing in nothing and submitting, if "enter" is held down too long. If the user decides to use the submit button, it works the way it should. 
+- Similar bug on mobile version: if the user uses the phone keybord to submit, no message will be shown - if the user clicks the submitbutton, it works the way it should.
+- (FIXED) Bceause the scoreboard will be created with JavaScript and the "score" cell will get assigned an id with use of the username, creating the same username multiple times is possible, but leads to problems: The cell id is bound by the username and creating a new username will reset the "highest score" which is used to build the score board - so if a username gets entered twice, it will reset the previous score for the username as well.
+- (FIXED) When creating the same useranme multiple times, only the score of the first entry in the scoreboard will be increased.
+
+[Back to top](<#contents>)
+
+## Bugfixes
+- Bugfixes: the dublicate id was resolved by checking if the username exists. This was possible via restructuring my functions for the scoreboard with the help of my mentor. Now saving the table in the local storage, and dublicate usernames are not a problem anymore.
 
 [Back to top](<#contents>)
 
