@@ -328,10 +328,13 @@ function resetStreaksValue() {
     document.getElementById("streak").innerText = 0;
 }
 
-
+/**
+ * Function to display Infos on how the user did
+ */
 function modal(num) {
 
     let modal = document.getElementById("modal");
+    modal.style.display = 'block';
     modal.classList.remove("hide");
 
     message = document.getElementById("modal-message");
@@ -350,20 +353,26 @@ function modal(num) {
         message.innerText = "You are low, but close."
     }
 
-
     let button = document.getElementById("close");
 
     button.addEventListener("click", function () {
         modal.classList.add("hide");
+        modal.style.display = "none"
         document.getElementById("guess-number").focus();
     });
     button.focus();
 
-    button.addEventListener("keydown", function (event) {
-        if (event.key) {
-            document.getElementById("close").click();
+    // listen for keyup event
+    document.addEventListener("keyup", () => {
+        // if the modal is on the page
+        if (modal) {
+            // get its display style value
+            const display = window.getComputedStyle(modal).getPropertyValue("display");
+            // if the value is a block
+            if (display === 'block') {
+                // set the display to none
+                modal.style.display = 'none';
+            }
         }
-    });
-
- 
+    }, {once: true});
 }

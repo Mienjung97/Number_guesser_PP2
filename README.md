@@ -213,7 +213,7 @@ Appearance, functionality and responsiveness were consistent throughout for a ra
 ## Honorable mentions 
 I have to thank my dear partner for being so patient since there is not a lot of free time and yet she fully supports me on a daily basis. <br>
 I am also thankful for my co-student Marceillo and Jan, who I worked closly together and helped me in times of questioning. <br>
-A big thank you goes out to the Tutors who have helped me along my second protfolio project: especially Sarah and Thomas helped me understand some problems, helped with technical problems and guided me towards a correct code. 
+A big thank you goes out to the Tutors who have helped me along my second protfolio project: especially Sarah, Sean and Thomas helped me understand some problems, helped with technical problems and guided me towards a correct code. This includes but is not limited to setting the IDs in the table and understanding the modals.
 
 [Back to top](<#contents>)
 

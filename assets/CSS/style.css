@@ -127,16 +127,20 @@ tr:hover {
 .modal {
     height: 100px;
     width: 150px;
-    justify-content: center;
-    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin-left: auto;
     margin-right: auto;
     background-color: red;
     border: 1px solid black;
     border-radius: 10px;
     color: white;
-    position: absolute;
     z-index: 99;
+}
+.modal p {
+    margin: 1rem;
 }
 
 /* Meadia query for small screens */
@@ -186,6 +190,10 @@ tr:hover {
         font-size: 125%;
     }
 
+    .modal {
+        height: 100px;        
+    }
+
     #head {
         font-size: 300%;
     }
@@ -199,6 +207,10 @@ tr:hover {
 @media (min-width: 1500px) {
     body {
         font-size: 150%;
+    }
+
+    .modal {
+        height: 100px;        
     }
 
     #head {
