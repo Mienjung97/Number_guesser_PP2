@@ -15,13 +15,14 @@ Number Guesser is a simple game in which you can test your luck against the odds
    - [**_Site aims_**](<#site-aims>)
    - [**_Target Audience_**](<#target-audience>)
    - [**_Site Goals_**](<#site-goals>)
+   - [**Wireframes**](<#wireframes>)
    - [**_Typography_**](<#typography>)
    - [**_Color scheme_**](<#color-scheme>)
 3. [**Features**](<#features>)
    - [**_Navigation_**](<#navigation>)
    - [**_Create a Username_**](<#create-a-username>)
-   - [**_Game one: Coin flip_**](<#game-one:-coin-flip>)
-   - [**_Game two: Roll a die_**](<#game-two:-roll-a-die>)
+   - [**_Game one Coin flip_**](<#game-one-coin-flip>)
+   - [**_Game two Roll a die_**](<#game-two-roll-a-die>)
    - [**_Scoreboard_**](<#scoreboard>)
 4. [**Technologies Used**](<#technologies-used>)
 5. [**Testing**](<#testing>)
@@ -55,9 +56,13 @@ Number Guesser is a simple game in which you can test your luck against the odds
 The wireframes for "Number Guesser" were produced with [Balsamiq](https://balsamiq.com/wireframes/). The following shows the basic design idea for mobile and desktop devices. The wireframes vary a bit from the actual webpage due to the development process. <br>
 - Wireframes for desktop:
 ![wireframe-desktop](readme-images/wireframe_desktop.PNG)
+
+[Back to top](<#contents>)
+
 - Wireframes for mobile:
 ![wireframe-mobile](readme-images/wireframes_mobile.PNG)
 
+[Back to top](<#contents>)
 
 ## Typography 
 - I have used the same "Bebas Neue" display font from google fonts for the whole project.
@@ -96,13 +101,13 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 
 [Back to top](<#contents>)
 
-## Game one: Coin flip
+## Game one Coin flip
 - The first game represents the odds of a coin flip: 1 in 2. <br>
 ![coinflip](readme-images/username_2nd.png)
 
 [Back to top](<#contents>)
 
-## Game two: Roll a die 
+## Game two Roll a die 
 - The second game represents the odds of rolling a die: 1 in 6. <br>
 ![dieroll](readme-images/game_die.png)
 
@@ -124,24 +129,6 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 - [Gitpod](https://www.gitpod.io/#get-started) - used to host and edit the website.
 - [Github](https://github.com/) - used to deploy the website.
 - [Balsamiq](https://balsamiq.com/wireframes/) - used to create the wireframes.
-
-[Back to top](<#contents>)
-
-# Deployment
-
-The website was deployed on GitHub Pages following these steps:
-
-1. Go to GitHub, navigate through Repository/settings/pages.
-2. Select "main branch" in the source tab and click save.
-3. The page should look like this, which includes the webpages address: <br>
-
-![deployment](readme-images/deployment.PNG)
-
-- Information on how to fork a project: [Fork the project](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
-
-- Information on how to clone a project: [Clone the project](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
-
-- Difference between clone and fork: "Forking creates your own copy of a repository in a remote location (for example, GitHub). Your own copy means that you will be able to contribute changes to your copy of the repository without affecting the original repository. Cloning makes a local copy of a repository, not your own copy." [Full explanation](https://www.educative.io/answers/what-is-the-difference-between-forking-and-cloning-in-git)
 
 [Back to top](<#contents>)
 
@@ -180,9 +167,13 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 - index.html: <br>
 ![index-validation](readme-images/validation_html.PNG)
 
+[Back to top](<#contents>)
+
 ### CSS validation via [CSS-validator](https://jigsaw.w3.org/css-validator/validator)
 - style.css: <br>
 ![style-validation](readme-images/validation_css.PNG)
+
+[Back to top](<#contents>)
 
 ### JS Validation via [jshint](https://jshint.com/)
 - script.js: 55 warnings were showed, none of them important. <br>
@@ -224,6 +215,24 @@ Owning Cats website was tested on the following browsers with no visible issues 
 - Mozilla Firefox 
 
 Appearance, functionality and responsiveness were consistent throughout for a range of device sizes and browsers.
+
+[Back to top](<#contents>)
+
+# Deployment
+
+The website was deployed on GitHub Pages following these steps:
+
+1. Go to GitHub, navigate through Repository/settings/pages.
+2. Select "main branch" in the source tab and click save.
+3. The page should look like this, which includes the webpages address: <br>
+
+![deployment](readme-images/deployment.PNG)
+
+- Information on how to fork a project: [Fork the project](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+
+- Information on how to clone a project: [Clone the project](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
+
+- Difference between clone and fork: "Forking creates your own copy of a repository in a remote location (for example, GitHub). Your own copy means that you will be able to contribute changes to your copy of the repository without affecting the original repository. Cloning makes a local copy of a repository, not your own copy." [Full explanation](https://www.educative.io/answers/what-is-the-difference-between-forking-and-cloning-in-git)
 
 [Back to top](<#contents>)
 
