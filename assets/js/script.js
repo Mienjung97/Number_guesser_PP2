@@ -329,7 +329,7 @@ function resetStreaksValue() {
 }
 
 /**
- * Function to display Infos on how the user did
+ * Function to display Infos on how the user did via modial pop up
  */
 function modal(num) {
 
@@ -353,6 +353,7 @@ function modal(num) {
         message.innerText = "You are low, but close.";
     }
 
+    // Closing the modial 
     let button = document.getElementById("close");
 
     button.addEventListener("click", function () {
