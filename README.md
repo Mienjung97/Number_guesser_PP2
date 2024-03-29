@@ -73,31 +73,30 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 # Features 
 
 ## Navigation 
-- The Navigation of the webpage is vers straight forward: To display the game, the user gets an alert, telling him to input a username (after confirming the alert, the focus is set to the username input). After confirming their username via the submit button or the "enter" key, the game will be displayed.
+- The Navigation of the webpage is vers straight forward: To display the game, the heading is telling him to input a username, the focus is set to the username input. After confirming their username via the submit button or the "enter" key, the game will be displayed and the username input will be hiden.
 - As default, the game "Coin" will be played. Again, after submitting the username, the focus is in the input field, which can be submitted via button or the "enter" key. 
 - The user can then decide to switch between games by clicking the corresponding button (Label "easy", green button with coin symbol: "Coin" game; Label "hard", red button with dice symbol: "Die" game)
-- By entereing a new username, the scores (besides the score board table) will be reset to "0" and a new entry in the scoreboard will be created.
+- The game saves previous scores from the score table in the local cache and the next time the page is loaded, the game will check if the username is already in use. If yes, it will continue with the old username, if not, it will create a new entry.
 
 [Back to top](<#contents>)
 
 ## Create a Username
-- First an alert promt shows up informing the user to create a username: <br> 
-![alert](readme-images/username_1st.PNG)
-- Once the alert has been dismissed, the focus will go to the input field: <br>
-![username-input](readme-images/username_2nd.PNG)
-- After a username has been set, the game "Coin" starts and becomes visible for the user.
+- Once the page has loaded, the focus will go to the input field: <br>
+![username-input](readme-images/username_1st.png)
+- After a username has been set, the game "Coin" starts and becomes visible for the user and the username input will disappear: <br>
+![game-start](readme-images/username_2nd.png)
 
 [Back to top](<#contents>)
 
 ## Game one: Coin flip
 - The first game represents the odds of a coin flip: 1 in 2. <br>
-![coinflip](readme-images/game_coin.PNG)
+![coinflip](readme-images/username_2nd.png)
 
 [Back to top](<#contents>)
 
 ## Game two: Roll a die 
 - The second game represents the odds of rolling a die: 1 in 6. <br>
-![dieroll](readme-images/game_die.PNG)
+![dieroll](readme-images/game_die.png)
 
 [Back to top](<#contents>)
 
