@@ -8,12 +8,16 @@ body {
     align-items: center;
 }
 
+
+.hide {
+    display: none;
+}
+
 /* Heading */
 
 #head {
     margin: 5px;
 }
-
 .logo {
     padding-top: 1rem;
 }
@@ -33,7 +37,6 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 .gamechoice {
     display: flex;
     text-align: center;
@@ -55,7 +58,6 @@ body {
     margin: 2%;
     font-weight: 700;
 }
-
 .btn-small {
     width: 8rem;
     height: 3rem;
@@ -79,11 +81,10 @@ body {
     font-size: 200%;
 }
 
-/* Center placeholder text */
+/* input number guess styling */
 ::placeholder {
     text-align: center;
 }
-
 #guess-number {
     padding: 1%;
     width: 5rem;
@@ -97,6 +98,7 @@ body {
     color: orange;
 }
 
+/* score area for current game */
 .scores {
     padding: 5px;
     border: 5px;
@@ -105,25 +107,21 @@ body {
     color: orange;
 }
 
+/* Scoreboard table */
 table {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
-
 table,
 th {
     border: 1px solid black;
 }
-
 tr:hover {
     background-color: white;
 }
 
-.hide {
-    display: none;
-}
-
+/* Pop up modial general styles */
 .modal {
     height: 150px;
     width: 225px;
@@ -163,6 +161,7 @@ tr:hover {
         padding: 5%;
     }
 
+    /* Pop up modial */
     .modal {
         height: 100px;
         width: 150px;
@@ -184,6 +183,7 @@ tr:hover {
 
 /* Media query for medium screens */
 @media (min-width: 700px) {
+    
     #head {
         font-size: 250%;
     }
@@ -199,23 +199,19 @@ tr:hover {
 
 /* Media query for big screens */
 @media (min-width: 1000px) {
+    /* General styles */
     body {
         font-size: 125%;
     }
-
-    .modal {
-        height: 100px;        
-    }
-
     #head {
         font-size: 300%;
     }
-
     .btn {
         width: 200px;
         height: 80px;
     }
 
+    /* Pop up modial */
     .modal {
         height: 225px;
         width: 340px;
@@ -231,33 +227,29 @@ tr:hover {
 }
 
 @media (min-width: 1500px) {
+    /* General styles */
     body {
         font-size: 150%;
     }
-
-    .modal {
-        height: 100px;        
-    }
-
     #head {
         font-size: 350%;
     }
-
-    .gamechoice {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .game-info {
-        position: relative;
-        margin-top: -170px;
-    }
-
     .btn {
         width: 300px;
         height: 120px;
     }
 
+    /* Game area */
+    .gamechoice {
+        display: flex;
+        justify-content: space-between;
+    }
+    .game-info {
+        position: relative;
+        margin-top: -170px;
+    }
+
+    /* Pop up modial */
     .modal {
         height: 250px;
         width: 400px;
@@ -285,7 +277,6 @@ tr:hover {
         padding-top: 0.5rem;
     }
 }
-
 @media (max-height: 700px) {
     .logo {
         width: 60%;

@@ -241,13 +241,13 @@ The website was deployed on GitHub Pages following these steps:
 
 ## Honorable mentions 
 I have to thank my dear partner for being so patient since there is not a lot of free time and yet she fully supports me on a daily basis. <br>
-I am also thankful for my co-student Marceillo and Jan, who I worked closly together and helped me in times of question. <br>
+I am also thankful for my co-student Marceillo and Jan, who I worked closly together, helped me with coming up with the idea for this project and helped me in times of question. <br>
 A big thank you goes out to the Tutors who have helped me along my second protfolio project: especially Sarah, Sean and Thomas helped me understand some problems, helped with technical problems and guided me towards a correct code. This includes but is not limited to setting the IDs in the table and understanding the modals.
 
 [Back to top](<#contents>)
 
 ## General reference: 
-- The biggest help and inspiration in my second project was my Mentor Akshat Garg who helped me a lot with understanding how to evade duplicate code and creating the local storage.
+- The biggest help in my second project was my Mentor Akshat Garg who helped me a lot with understanding how to evade duplicate code and creating the local storage.
 - For incrementing the scores, I took great inspiration from the [Love Maths](https://github.com/Mienjung97/love-maths) project.
 - For creating this readme, I have used the template from my [Owning Cats](https://github.com/Mienjung97/Owning-Cats) project, which I took inspiration from [Ewan Colquhoun](https://github.com/EwanColquhoun/wawaswoods/blob/master/README.md?plain=1#deployment) and my colleague [Marceillo](https://github.com/Marceillo) for the general overview.
 - I used some help from various [YouTube](https://www.youtube.com/results?search_query=make+a+scorebord+with+username+in+javascript) tutorials, [stackoverflow](https://stackoverflow.com/) posts and [w3schools](https://www.w3schools.com/) tutorials.
