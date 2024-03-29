@@ -340,24 +340,24 @@ function modal(num) {
     message = document.getElementById("modal-message");
 
     if (num === 1) {
-        message.innerText = "You are right."
+        message.innerText = "You are right.";
     } else if (num === 2) {
-        message.innerText = "You are wrong."
+        message.innerText = "You are wrong.";
     } else if (num === 3) {
-        message.innerText = "You are too high."
+        message.innerText = "You are too high.";
     } else if (num === 4) {
-        message.innerText = "You are high, but close."
+        message.innerText = "You are high, but close.";
     } else if (num === 5) {
-        message.innerText = "You are too low."
+        message.innerText = "You are too low.";
     } else {
-        message.innerText = "You are low, but close."
+        message.innerText = "You are low, but close.";
     }
 
     let button = document.getElementById("close");
 
     button.addEventListener("click", function () {
         modal.classList.add("hide");
-        modal.style.display = "none"
+        modal.style.display = "none";
         document.getElementById("guess-number").focus();
     });
     button.focus();
