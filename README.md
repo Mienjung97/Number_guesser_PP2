@@ -5,7 +5,7 @@ Welcome to my homepage [Number Guesser](https://mienjung97.github.io/Number_gues
 ![Number Guesser](readme-images/responsiveness.PNG)
 
 ## Site Overview
-Number Guesser is a simple game in which you can test your luck against the odds in two games: Game "Coin", which simbolizes a coin toss with the odds of 1 in 2 and game "Die", which has the odds of rolling a six sided die. You have to create a Username to start the game, which from this point on will keep track of your current streak, your "wrong inputs" and your highest streak. The latest will be saved in the leaderboard table - which is important, since you are able to crate as much Usernames as you want, each starting with all three scores of "0". 
+Number Guesser is a simple game in which you can test your luck against the odds in two games: Game "Coin", which simbolizes a coin toss with the odds of 1 in 2 and game "Die", which has the odds of rolling a six sided die. You have to create a username to start the game, which from this point on will keep track of your current streak, "wrong inputs" and highest streak. The latter will be saved in the leaderboard table - which is important, since you are able to crate as much usernames as you want, each starting with all three scores of "0". 
 
 # Contents
 
@@ -20,7 +20,7 @@ Number Guesser is a simple game in which you can test your luck against the odds
    - [**_Color scheme_**](<#color-scheme>)
 3. [**Features**](<#features>)
    - [**_Navigation_**](<#navigation>)
-   - [**_Create a Username_**](<#create-a-username>)
+   - [**_Create a username_**](<#create-a-username>)
    - [**_Game one Coin flip_**](<#game-one-coin-flip>)
    - [**_Game two Roll a die_**](<#game-two-roll-a-die>)
    - [**_Scoreboard_**](<#scoreboard>)
@@ -44,11 +44,11 @@ Number Guesser is a simple game in which you can test your luck against the odds
 ## Idea 
 - The idea for this webpage was to create a number guessing game that shows how hard it is to get multiple right guesses in a row. First, I thought about creating a lotto game (odds: 1 in 49, 6 times to win), but there a highscore higher than 1 would have been unlikely.
 ## Site Aims 
-- The website aims to show how hard it is, to guess multiple random outcomes in an easy and optainable way. 
+- The website aims to show how hard it is, to guess multiple random outcomes in an easy and obtainable way. 
 ## Target Audience 
 - Anyone who is interested in testing their luck against the odds.
 ## Site Goals 
-- The goal was to create two games, one game with the odds of one in two, symbolizing a coin toss, and one game with the odds of one in six, illustrating the odds of rolling a die.
+- The goal was to create two games, one game with the odds of one in two, symbolizing a coin toss, and one game with the odds of one in six, representing the odds of rolling a die.
 
 [Back to top](<#contents>)
 
@@ -78,7 +78,7 @@ For the webpage I have used orange, white, grey and black colors since they prov
 ![white](readme-images/color_white.png)
 - Red and Green for Buttons: <br>
 ![red](readme-images/color_red.png)
-![green](readme-images/color_white.png) <br>
+![green](readme-images/color_green.png) <br>
 Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 
 [Back to top](<#contents>)
@@ -86,17 +86,17 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 # Features 
 
 ## Navigation 
-- The Navigation of the webpage is vers straight forward: To display the game, the heading is telling him to input a username, the focus is set to the username input. After confirming their username via the submit button or the "enter" key, the game will be displayed and the username input will be hiden.
-- As default, the game "Coin" will be played. Again, after submitting the username, the focus is in the input field, which can be submitted via button or the "enter" key. 
+- The Navigation of the webpage is vers straight forward: Before displaying the game, the heading is telling the user to input a username as the focus is ser to the username input. After confirming the username via the submit button or the "enter" key, the game will be displayed and the username input will be hidden.
+- As default, the game "Coin" will be played. Again, after submitting the username, the focus is on the input field, which can be submitted via button or the "enter" key. 
 - The user can then decide to switch between games by clicking the corresponding button (Label "easy", green button with coin symbol: "Coin" game; Label "hard", red button with dice symbol: "Die" game)
 - The game saves previous scores from the score table in the local cache and the next time the page is loaded, the game will check if the username is already in use. If yes, it will continue with the old username, if not, it will create a new entry.
 
 [Back to top](<#contents>)
 
-## Create a Username
+## Create a username
 - Once the page has loaded, the focus will go to the input field: <br>
 ![username-input](readme-images/username_1st.png)
-- After a username has been set, the game "Coin" starts and becomes visible for the user and the username input will disappear: <br>
+- After a username has been set, the game "Coin" starts and becomes visible to the user and the username input will disappear: <br>
 ![game-start](readme-images/username_2nd.png)
 
 [Back to top](<#contents>)
@@ -133,8 +133,8 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 [Back to top](<#contents>)
 
 # Testing
-- The Website was continiously testet for responsiveness and functional JavaScript code with console.log() function. Therefore I was able to correct all the small mistakes. 
-- First I used code multiple times (same code for each game), which worked but made the code not very readable. Through guidance by my mentor, I was able to delete all the dublicate code. 
+- The Website was continiously tested for responsiveness and functional JavaScript code with console.log() function. Therefore I was able to correct all the small mistakes. 
+- First I used code multiple times (same code for each game), which worked but made the code not very readable. Through guidance by my mentor, I was able to delete all the duplicate code. 
 
 
 
@@ -143,15 +143,15 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 ## Bugs
 - In Mozilla Firefox, the borders of the buttons in the "game-area" will be displayed as a white color: <br>
 ![mozilla-bug](readme-images/firefox_bug.PNG) 
-- In the attempt of exchanging the alert() function with modals, I created a bug which only appears, if the user tries to submit the number guess via the keyboard: since the eventListener is waiting for a "keyup", the message only will be displayed as long as the "enter" key gets held down. This results in an alert for passing in nothing and submitting, if "enter" is held down too long. If the user decides to use the submit button, it works the way it should. 
-- Similar bug on mobile version: if the user uses the phone keybord to submit, no message will be shown - if the user clicks the submitbutton, it works the way it should.
+- In the attempt of exchanging the alert() function with modals, I have created a bug which only appears, if the user tries to submit the number guess via the keyboard: since the eventListener is waiting for a "keyup", the message only will be displayed as long as the "enter" key gets held down. This results in an alert for passing in nothing and submitting, if "enter" is held down too long. If the user decides to use the submit button, it works the way it should. 
+- Similar bug on mobile version: if the user uses the phone keybord to submit, no message will be shown - if the user clicks the submit button, it works the way it should.
 - (FIXED) Bceause the scoreboard will be created with JavaScript and the "score" cell will get assigned an id with use of the username, creating the same username multiple times is possible, but leads to problems: The cell id is bound by the username and creating a new username will reset the "highest score" which is used to build the score board - so if a username gets entered twice, it will reset the previous score for the username as well.
-- (FIXED) When creating the same useranme multiple times, only the score of the first entry in the scoreboard will be increased.
+- (FIXED) When creating the same username multiple times, only the score of the first entry in the scoreboard will be increased.
 
 [Back to top](<#contents>)
 
 ## Bugfixes
-- Bugfixes: the dublicate id was resolved by checking if the username exists. This was possible via restructuring my functions for the scoreboard with the help of my mentor. Now saving the table in the local storage, and dublicate usernames are not a problem anymore.
+- Bugfixes: the duplicate id was resolved by checking if the username exists. This was possible via restructuring my functions for the scoreboard with the help of my mentor. Now saving the table in the local storage, and duplicate usernames are not a problem anymore.
 
 [Back to top](<#contents>)
 
@@ -174,6 +174,7 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 ![style-validation](readme-images/validation_css.PNG)
 
 [Back to top](<#contents>)
+
 
 ### JS Validation via [jshint](https://jshint.com/)
 - script.js: 55 warnings were showed, none of them important. <br>
@@ -209,7 +210,7 @@ After trying to code very similar to the "Love Maths" project, I ran into more e
 
 ## Browser Compatibility
 
-Owning Cats website was tested on the following browsers with no visible issues for the user: 
+Number Guesser website was tested on the following browsers with no visible issues for the user: 
 - Google Chrome
 - Microsoft Edge
 - Mozilla Firefox 
@@ -240,13 +241,13 @@ The website was deployed on GitHub Pages following these steps:
 
 ## Honorable mentions 
 I have to thank my dear partner for being so patient since there is not a lot of free time and yet she fully supports me on a daily basis. <br>
-I am also thankful for my co-student Marceillo and Jan, who I worked closly together and helped me in times of questioning. <br>
+I am also thankful for my co-student Marceillo and Jan, who I worked closly together and helped me in times of question. <br>
 A big thank you goes out to the Tutors who have helped me along my second protfolio project: especially Sarah, Sean and Thomas helped me understand some problems, helped with technical problems and guided me towards a correct code. This includes but is not limited to setting the IDs in the table and understanding the modals.
 
 [Back to top](<#contents>)
 
 ## General reference: 
-- The biggest help and inspiration in my first project was my Mentor Akshat Garg who helped me a lot with understanding how to evade dublicate code.
+- The biggest help and inspiration in my second project was my Mentor Akshat Garg who helped me a lot with understanding how to evade duplicate code and creating the local storage.
 - For incrementing the scores, I took great inspiration from the [Love Maths](https://github.com/Mienjung97/love-maths) project.
 - For creating this readme, I have used the template from my [Owning Cats](https://github.com/Mienjung97/Owning-Cats) project, which I took inspiration from [Ewan Colquhoun](https://github.com/EwanColquhoun/wawaswoods/blob/master/README.md?plain=1#deployment) and my colleague [Marceillo](https://github.com/Marceillo) for the general overview.
 - I used some help from various [YouTube](https://www.youtube.com/results?search_query=make+a+scorebord+with+username+in+javascript) tutorials, [stackoverflow](https://stackoverflow.com/) posts and [w3schools](https://www.w3schools.com/) tutorials.
