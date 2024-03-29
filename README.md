@@ -51,6 +51,14 @@ Number Guesser is a simple game in which you can test your luck against the odds
 
 [Back to top](<#contents>)
 
+## Wireframes
+The wireframes for "Number Guesser" were produced with [Balsamiq](https://balsamiq.com/wireframes/). The following shows the basic design idea for mobile and desktop devices. The wireframes vary a bit from the actual webpage due to the development process. <br>
+- Wireframes for desktop:
+![wireframe-desktop](readme-images/wireframe_desktop.PNG)
+- Wireframes for mobile:
+![wireframe-mobile](readme-images/wireframes_mobile.PNG)
+
+
 ## Typography 
 - I have used the same "Bebas Neue" display font from google fonts for the whole project.
 
@@ -244,6 +252,8 @@ A big thank you goes out to the Tutors who have helped me along my second protfo
 - Colors were created with [rgbacolorpicker](https://rgbacolorpicker.com/).
 - For rezizing the images, the tool [Images Resizer](https://imageresizer.com/) was used.
 - The responsive image was created with [Amiresponsive](https://ui.dev/amiresponsive).
+- For creating the wireframes, I used [Balsamiq](https://balsamiq.com/wireframes/).
+
 
 [Back to top](<#contents>)
 
