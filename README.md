@@ -1,4 +1,4 @@
-# Number Guesser
+# NumberGuesser
 
 Welcome to my homepage [Number Guesser](https://mienjung97.github.io/Number_guesser_PP2/)
 
