@@ -101,11 +101,10 @@ Created with [rgbacolorpicker](https://rgbacolorpicker.com/)
 [Back to top](<#contents>)
 
 ## Scoreboard
-- The scoreboard will show as many usernames as the user will put in.
-- As soon as there are more than one user, a button "Delete last user" will appear and does what it describes.
-- The following picture still has USER3 as an active player, so all scores are still shown. <br>
+- The scoreboard will show as many usernames as the user will put in, but will update according to the score achieved.
+- While having an active user, it will show all the scores:
 ![scoreboard](readme-images/multiple_users.PNG) <br>
-- As soon as USER4 will be entered, it will reset all score keeping items and add a new user: <br>
+- As soon as USER2 will be entered, it will reset all score keeping items and add a new user: <br>
 ![scoreboard-new-user](readme-images/multiple_users_score.PNG) 
 
 [Back to top](<#contents>)
