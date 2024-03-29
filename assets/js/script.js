@@ -123,7 +123,9 @@ function onNumberSubmit(event, randomNumber, gameType) {
 
     // correct statemant
     if (correct) {
-        alert("Amazing, you got it! Now Try again.");
+        //alert("Amazing, you got it! Now Try again.");
+        modal(1);
+
         winningStreak();
         highestStreak();
         if (gameType === "coin") {
@@ -141,21 +143,21 @@ function onNumberSubmit(event, randomNumber, gameType) {
 
         if (gameType === "coin") {
             // messages for wrong answer
-            alert("You are wrong");
+            modal(2);
             incrementWrongAnswer();
         } else {
             if (userGuess < (randomNumber - 1)) {
-                alert("You are far too low.");
+                modal(5);
                 incrementWrongAnswer();
             } else if (userGuess < randomNumber) {
-                alert("You are too low, but close.");
+                modal(6);
                 incrementWrongAnswer();
                 // two messages for too high
             } else if (userGuess > (randomNumber + 1)) {
-                alert("You are far too high.");
+                modal(3);
                 incrementWrongAnswer();
             } else {
-                alert("You are too high, but close.");
+                modal(4);
                 incrementWrongAnswer();
             }
         }
@@ -324,4 +326,44 @@ function resetStreaksValue() {
     document.getElementById("fails").innerText = 0;
     document.getElementById("biggest-streak").innerText = 0;
     document.getElementById("streak").innerText = 0;
+}
+
+
+function modal(num) {
+
+    let modal = document.getElementById("modal");
+    modal.classList.remove("hide");
+
+    message = document.getElementById("modal-message");
+
+    if (num === 1) {
+        message.innerText = "You are right."
+    } else if (num === 2) {
+        message.innerText = "You are wrong."
+    } else if (num === 3) {
+        message.innerText = "You are too high."
+    } else if (num === 4) {
+        message.innerText = "You are high, but close."
+    } else if (num === 5) {
+        message.innerText = "You are too low."
+    } else {
+        message.innerText = "You are low, but close."
+    }
+
+
+    let button = document.getElementById("close");
+
+    button.addEventListener("click", function () {
+        modal.classList.add("hide");
+        document.getElementById("guess-number").focus();
+    });
+    button.focus();
+
+    button.addEventListener("keydown", function (event) {
+        if (event.key) {
+            document.getElementById("close").click();
+        }
+    });
+
+ 
 }

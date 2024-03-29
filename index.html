@@ -21,94 +21,102 @@
 </head>
 
 <body>
-    <div class="heading">
-        <h1 id="head">Guess the right numbers!</h1>
-        <!-- 
+    <section>
+        <div class="heading">
+            <h1 id="head">Guess the right numbers!</h1>
+            <!-- 
             Photo by <a href="https://unsplash.com/@zisun_word?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
                 ZSun Fu</a> on 
                 <a href="https://unsplash.com/photos/grayscale-photography-of-person-holding-coin-b4D7FKAghoE?utm_content=creditCopy
                 Text&utm_medium=referral&utm_source=unsplash">Unsplash</a> 
         -->
-        <img class="logo" id="logo-coin" src="assets/images/zsun-fu-b4D7FKAghoE-unsplash.jpg"
-            alt="A coin ready to be tossed">
+            <img class="logo" id="logo-coin" src="assets/images/zsun-fu-b4D7FKAghoE-unsplash.jpg"
+                alt="A coin ready to be tossed">
 
-        <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
-        <img class="logo" id="logo-die" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
-            alt="Big black die gets trown into the air">
-    </div>
+            <!-- img source: assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg -->
+            <img class="logo" id="logo-die" src="assets/images/erik-mclean-C3T8KTZxTFM-unsplash.jpg"
+                alt="Big black die gets trown into the air">
+        </div>
 
-    <div id="username-input">
-        <!-- Username input required to play the game -->
-        <label for="username">Enter a username and submit to start</label>
-        <br>
-        <input type="text" name="username" id="username" placeholder="Your Username" required>
-        <button type="submit" id="usernamesubmit">Submit</button>
-    </div>
+        <div id="username-input">
+            <!-- Username input required to play the game -->
+            <label for="username">Enter a username and submit to start</label>
+            <br>
+            <input type="text" name="username" id="username" placeholder="Your Username" required>
+            <button type="submit" id="usernamesubmit">Submit</button>
+        </div>
+    </section>
+    <section>
+        <div id="begin" class="hide">
+            <!-- Game Area -->
+            <div class="game-area">
+                <div class="gamechoice">
+                    <!-- Buttons for choosing game -->
+                    <div>
+                        <!-- Coin flip game -->
+                        <label for="green">Easy: Coin toss</label>
+                        <br>
+                        <button id="green" data-type="coin" class="btn coin" aria-label='Play the game "Toss the coin"'>
+                            <i class="fa-solid fa-circle-half-stroke"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <!-- Dice roll game -->
+                        <label for="red">Hard: Roll a die</label>
+                        <br>
+                        <button id="red" data-type="die" class="btn dice" aria-label='Play the game "Roll the die"'>
+                            <i class="fa-solid fa-dice"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Game information display (changing with gametype - not yet implemented) -->
+                <div class="game-info">
+                    <p>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></p>
+                </div>
+                <!-- message about correcness of input-->
+                <div id="modal" class="modal hide">
+                    <p id="modal-message"></p>
+                    <button type="submit" id="close">Close</button>
+                </div>
+                <!-- Area to input number guess -->
+                <div class="answer-area">
+                    <input type="number" id="guess-number" placeholder="Your guess">
+                </div>
+                <!-- Submit button (Enter works as "click on submit") -->
+                <button data-type="submit" id="submit" class="btn-submit">Submit your guess</button>
+                <div class="answer">
+                    <p class="hide">The number you are supposed to guess is: <span id="number">0</span></p>
+                </div>
+            </div>
 
-    <div id="begin" class="hide"> 
-        <!-- Game Area -->
+            <!-- General code for scores was inspired by "love maths" project -->
+            <div class="score-area">
+                <!-- Current streak of correct guesses, resets after fail -->
+                <p class="scores">Current streak: <span id="streak">0</span></p>
+                <!-- Shows the greatest high score, does not reset -->
+                <p class="scores">Highest streak: <span id="biggest-streak">0</span></p>
+                <!-- Shows the amount of fails -->
+                <p class="scores">Fail counter: <span id="fails">0</span></p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <!-- Area for storing scores corresponding to username -->
         <div class="game-area">
-            <div class="gamechoice">
-                <!-- Buttons for choosing game -->
-                <div>
-                    <!-- Coin flip game -->
-                    <label for="green">Easy: Coin toss</label>
-                    <br>
-                    <button id="green" data-type="coin" class="btn coin" aria-label='Play the game "Toss the coin"'>
-                        <i class="fa-solid fa-circle-half-stroke"></i>
-                    </button>
-                </div>
-                <div>
-                    <!-- Dice roll game -->
-                    <label for="red">Hard: Roll a die</label>
-                    <br>
-                    <button id="red" data-type="die" class="btn dice" aria-label='Play the game "Roll the die"'>
-                        <i class="fa-solid fa-dice"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Game information display (changing with gametype - not yet implemented) -->
-            <div class="game-info">
-                <p>Game explanation: <br> Find the number between <span id="explanation">1 and 2</span></p>
-            </div>
-            <!-- Area to input number guess -->
-            <div class="answer-area">
-                <input type="number" id="guess-number" placeholder="Your guess">
-            </div>
-            <!-- Submit button (Enter works as "click on submit") -->
-            <button data-type="submit" id="submit" class="btn-submit">Submit your guess</button>
-            <div class="answer">
-                <p class="hide">The number you are supposed to guess is: <span id="number">0</span></p>
-            </div>
+
+            <table id="highscoreTable">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="highscore">
+                </tbody>
+            </table>
         </div>
-
-        <!-- For later point: introduce highscore that gets saved in browser cache -->
-        <!-- General code for scores was inspired by "love maths" project -->
-        <div class="score-area">
-            <!-- Current streak of correct guesses, resets after fail -->
-            <p class="scores">Current streak: <span id="streak">0</span></p>
-            <!-- Shows the greatest high score, does not reset -->
-            <p class="scores">Highest streak: <span id="biggest-streak">0</span></p>
-            <!-- Shows the amount of fails -->
-            <p class="scores">Fail counter: <span id="fails">0</span></p>
-        </div>
-    </div>
-
-    <!-- Area for storing scores corresponding to username -->
-    <div class="game-area">
-
-        <table id="highscoreTable">
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody id="highscore">
-            </tbody>
-        </table>
-    </div>
-
+    </section>
+        
     <script src="assets/js/script.js"></script>
 </body>
 

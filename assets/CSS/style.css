@@ -55,6 +55,7 @@ body {
     margin: 2%;
     font-weight: 700;
 }
+
 .btn-small {
     width: 8rem;
     height: 3rem;
@@ -123,15 +124,32 @@ tr:hover {
     display: none;
 }
 
+.modal {
+    height: 100px;
+    width: 150px;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    position: absolute;
+    z-index: 99;
+}
+
 /* Meadia query for small screens */
 @media (max-width: 400px) {
     .logo {
         width: 75%;
     }
+
     .btn-small {
         width: 100px;
         height: 2rem;
     }
+
     .game-area {
         padding: 5%;
     }
@@ -149,13 +167,15 @@ tr:hover {
 
 /* Media query for medium screens */
 @media (min-width: 700px) {
-    #head{
+    #head {
         font-size: 250%;
     }
+
     #username-input {
         font-size: 200%;
     }
-    #username{
+
+    #username {
         font-size: 35%;
     }
 }
@@ -165,9 +185,11 @@ tr:hover {
     body {
         font-size: 125%;
     }
-    #head{
+
+    #head {
         font-size: 300%;
     }
+
     .btn {
         width: 200px;
         height: 80px;
@@ -178,22 +200,27 @@ tr:hover {
     body {
         font-size: 150%;
     }
-    #head{
+
+    #head {
         font-size: 350%;
     }
-    .gamechoice{
+
+    .gamechoice {
         display: flex;
         justify-content: space-between;
     }
+
     .game-info {
         position: relative;
         margin-top: -170px;
     }
+
     .btn {
         width: 300px;
         height: 120px;
     }
 }
+
 @media (min-width: 1850px) {
     .btn {
         margin-left: 4rem;
@@ -207,6 +234,7 @@ tr:hover {
         padding-top: 0.5rem;
     }
 }
+
 @media (max-height: 700px) {
     .logo {
         width: 60%;
