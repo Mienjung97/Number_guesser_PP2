@@ -140,7 +140,12 @@ tr:hover {
     z-index: 99;
 }
 .modal p {
-    margin: 1rem;
+    margin: 2rem;
+    font-size: 150%;
+}
+#close {
+    width: 5rem;
+    height: 2rem;
 }
 
 /* Meadia query for small screens */
@@ -157,6 +162,14 @@ tr:hover {
     .game-area {
         padding: 5%;
     }
+
+    .modal {
+        height: 100px;
+        width: 150px;
+    }
+    .modal p {
+        margin: 1rem;
+    }
 }
 
 /* Meadia query for small screens */
@@ -166,10 +179,6 @@ tr:hover {
         flex-direction: column;
         text-align: center;
         justify-content: space-evenly;
-    }
-    .modal {
-        height: 100px;
-        width: 150px;
     }
 }
 
@@ -206,6 +215,19 @@ tr:hover {
         width: 200px;
         height: 80px;
     }
+
+    .modal {
+        height: 225px;
+        width: 340px;
+    }
+    .modal p {
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+    }
+    #close {
+        width: 7rem;
+        height: 3rem;
+    }
 }
 
 @media (min-width: 1500px) {
@@ -234,6 +256,19 @@ tr:hover {
     .btn {
         width: 300px;
         height: 120px;
+    }
+
+    .modal {
+        height: 250px;
+        width: 400px;
+    }
+    .modal p {
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+    }
+    #close {
+        width: 7rem;
+        height: 3rem;
     }
 }
 
